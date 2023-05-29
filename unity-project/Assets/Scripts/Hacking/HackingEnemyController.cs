@@ -18,9 +18,16 @@ public class HackingEnemyController : Damagable, IDamageDealer
         searchTimer = searchTime;
         hackingPlayerScrip = FindObjectOfType<HackingPlayerController>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+
+        HPEmpty += OnDead;
     }
 
-    // Update is called once per frame
+	private void OnDead(Damagable obj)
+	{
+        Destroy(gameObject);
+	}
+
+	// Update is called once per frame
     void Update()
     {
         if (searchTimer<=0)
@@ -37,7 +44,7 @@ public class HackingEnemyController : Damagable, IDamageDealer
     private void MoveAndShootTarget()
     {
         moveVector = hackingPlayerScrip.transform.position - this.transform.position;
-        rigidbody2D.AddForce(moveVector.normalized * moveThrust * Time.deltaTime, ForceMode2D.Impulse);
+        rigidbody2D.AddForce(moveVector.normalized * (moveThrust * Time.deltaTime), ForceMode2D.Impulse);
         var bullet = Instantiate(hackingBullet, transform.position, Quaternion.identity);
         bullet.moveVector = moveVector.normalized;
         searchTimer = searchTime;

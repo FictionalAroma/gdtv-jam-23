@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -271,6 +271,14 @@ PrefabInstance:
       propertyPath: playerAimTarget
       value: 
       objectReference: {fileID: 1495170425}
+    - target: {fileID: 1268873799, guid: 0500017ce8479704794805ebb48424de, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268873800, guid: 0500017ce8479704794805ebb48424de, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2833468059982212596, guid: 0500017ce8479704794805ebb48424de,
         type: 3}
       propertyPath: m_Name
@@ -576,6 +584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MatrixBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568417865273346468, guid: 038465fad7564ae4d8ac4ca902be9857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1568417865273346520, guid: 038465fad7564ae4d8ac4ca902be9857,
         type: 3}
