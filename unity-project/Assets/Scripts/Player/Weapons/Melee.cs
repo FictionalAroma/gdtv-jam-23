@@ -1,4 +1,5 @@
 using CommonComponents.Interfaces;
+using Management;
 using System.Collections;
 using UnityEngine;
 
@@ -9,10 +10,11 @@ namespace Player.Weapons
 		private Coroutine _punching;
 		private Coroutine _smashing;
 		[SerializeField] GameObject player;
-		
+		[SerializeField] AudioClip primaryMeleeSFX;
+		[SerializeField] AudioClip secondaryMeleeSFX;
 		public override void BeginPrimaryAttack(Vector3 fireDirection)
 		{
-			Debug.Log("Start punching");
+			
 			FireDirection = fireDirection;
 			_punching = StartCoroutine(PunchingRepeater());
 		}
@@ -28,6 +30,7 @@ namespace Player.Weapons
 				var setup = weaponsSetup.primary;
 				var primaryAttackCheck = GetNextBullet(setup,PrimaryShotPool);
 				primaryAttackCheck.Initialize(transform.position + transform.forward * setup.timeToLive, setup.timeToLive, setup.speed, setup.damage);
+				player.GetComponent<PlayerController>().jukeBox.PlayOneShot(primaryMeleeSFX);
 				primaryAttackCheck.GetComponent<SphereCollider>().radius = setup.timeToLive;
 				
 				
@@ -47,6 +50,7 @@ namespace Player.Weapons
 			var setup = weaponsSetup.secondary;
 			var _secondaryAttackCheck = GetNextBullet(setup, SecondaryShotPool);
 			_secondaryAttackCheck.Initialize(transform.position + transform.forward * setup.timeToLive, setup.timeToLive, setup.speed, setup.damage);
+			player.GetComponent<PlayerController>().jukeBox.PlayOneShot(secondaryMeleeSFX);
 			_secondaryAttackCheck.GetComponent<SphereCollider>().radius = setup.timeToLive;
 			_secondaryAttackCheck.GetComponent<ParticleSystem>().Play();
 

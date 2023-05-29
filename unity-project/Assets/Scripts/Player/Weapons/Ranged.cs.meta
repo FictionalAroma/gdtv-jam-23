@@ -3,7 +3,11 @@ guid: 373923173c752df4d8f9eb78bbb78531
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - weaponsSetup: {instanceID: 0}
+  - primaryRangedSFX: {fileID: 8300000, guid: 59e4e0324b0858148a39526c595258a9, type: 3}
+  - secondaryRangedSFX: {fileID: 8300000, guid: 9785d04b0ebf5d64d832bca06fe74d10,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

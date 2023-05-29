@@ -6,7 +6,7 @@ using System.Collections;
 using CommonComponents;
 using CommonComponents.Interfaces;
 using UI;
-
+using Management;
 
 namespace Player
 {
@@ -23,6 +23,7 @@ namespace Player
 		private Vector2 _currentMoveInputVector = Vector2.zero;
 		private float _playerGrav;
 		PauseMenuManager pauseMenuManager;
+		public Jukebox jukeBox;
 		#region Serialisation
 		public BaseWeapon[] weapons;
 		public BaseWeapon _currentWeapon;
@@ -49,7 +50,7 @@ namespace Player
 			SingletonRepo.PlayerObject = this;
 			_camera = Camera.main;
 			_characterController = GetComponent<CharacterController>();
-
+			jukeBox = FindObjectOfType<Jukebox>();
 
 			_actor = GetComponent<InteractableActor>();
 			
