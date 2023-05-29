@@ -195,5 +195,10 @@ namespace Hacking.Player
 		{
 			throw new System.NotImplementedException();
 		}
-	}
+
+        public void OnEscape(InputAction.CallbackContext context)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

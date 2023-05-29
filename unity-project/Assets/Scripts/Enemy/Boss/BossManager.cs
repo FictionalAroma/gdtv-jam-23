@@ -17,19 +17,21 @@ namespace Enemy.Boss
 		public Animator BossAnimator;
 		protected BossMover _mover;
 
-		private Collider[] _colliderCache;
+		public Collider[] _colliderCache;
 
 		protected SliderDisplay _hpBar;
 		[SerializeField] private float TargetDistanceMelee;
 		[SerializeField] private float TargetDistanceRanged;
 
 		[SerializeField] private List<ObjectiveDoor> rechargePoints;
-		[SerializeField] private Vector3 startPosition;
-
+		[SerializeField] public Vector3 startPosition;
+		public bool startEncounter;
+		public bool isAlreadyStarted;
 		protected override void Awake()
 		{
 			_stateMachine = GetComponent<EnemyStateMachine>();
-
+			isAlreadyStarted = false;
+			startEncounter = false;
 			_colliderCache = GetComponents<Collider>();
 			base.Awake();
 
@@ -53,8 +55,16 @@ namespace Enemy.Boss
 				rechargePoint.OnOpen += RechargePointOnOnOpen;
 			}
 		}
+        private void Update()
+        {
+            if (startEncounter == true&& isAlreadyStarted == false)
+            {
+				Startup();
+				isAlreadyStarted = true;
+            }
+        }
 
-		private void RechargePointOnOnOpen()
+        private void RechargePointOnOnOpen()
 		{
 			CurrentHP = MaxHP;
 			ResetPosition();
@@ -65,16 +75,12 @@ namespace Enemy.Boss
 			_stateMachine.TrySwapState(BossState.Intro);
 
 		}
-
+		
 		public void ResetPosition()
 		{
-			_mover.JumpToPosition(startPosition);
-			ChooseNextAttack();
-		}
-
-		private void ChooseNextAttack()
-		{
-
+			
+			_stateMachine.TrySwapState(BossState.Dodge);
+			
 		}
 
 		private void OnDeath(Damagable damagable)

@@ -22,7 +22,7 @@ namespace Player
 		private Vector2 _currentLookPosition;
 		private Vector2 _currentMoveInputVector = Vector2.zero;
 		private float _playerGrav;
-
+		PauseMenuManager pauseMenuManager;
 		#region Serialisation
 		public BaseWeapon[] weapons;
 		public BaseWeapon _currentWeapon;
@@ -52,7 +52,7 @@ namespace Player
 
 
 			_actor = GetComponent<InteractableActor>();
-
+			
 			CacheControls();
 			
 			base.Awake();
@@ -63,6 +63,7 @@ namespace Player
 			HPEmpty += OnDeath;
 			HPEmpty += AnimControlScript.OnDeath;
 			_currentWeapon = weapons[0];
+			pauseMenuManager = FindObjectOfType<PauseMenuManager>();
 		}
 
 
@@ -253,6 +254,11 @@ namespace Player
         {
 			_controls.Disable();
         }
-        
+
+        public void OnEscape(InputAction.CallbackContext context)
+        {
+			
+			pauseMenuManager.TogglePause();
+        }
     }
 }
