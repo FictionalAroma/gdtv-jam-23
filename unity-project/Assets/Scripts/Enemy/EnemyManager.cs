@@ -2,7 +2,6 @@
 using Enemy.States;
 using UI;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Enemy
 {
@@ -10,11 +9,11 @@ namespace Enemy
 	[RequireComponent(typeof(EnemyStateMachine))]
 	public class EnemyManager : Damagable
 	{
-		private EnemyStateMachine _stateMachine;
+		protected EnemyStateMachine _stateMachine;
 		public Animator enemyAnimator;
-		private EnemyMover _mover;
+		protected EnemyMover _mover;
 
-		private SliderDisplay _hpBar;
+		protected SliderDisplay _hpBar;
         public float lookDistance = 30f;
 		public float lookAngle = 60f;
 		private bool _attackImmediate = false;
@@ -54,7 +53,7 @@ namespace Enemy
 			_attackImmediate = true;
 		}
 
-		private void OnDeath(Damagable damagable)
+		protected void OnDeath(Damagable damagable)
 		{
 			_stateMachine.SwapState(EnemyState.Dead);
 			

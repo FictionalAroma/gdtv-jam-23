@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-
 using UnityEngine;
 
-namespace MirzaBeig
+namespace Mirza_Beig.Particle_Systems._Common.Scripts
 {
 
     namespace ParticleSystems

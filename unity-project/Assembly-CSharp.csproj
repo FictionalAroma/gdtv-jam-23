@@ -136,6 +136,15 @@
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossMover.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossStateContext.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossAttackState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossAlertState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossBaseState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossIdleState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossDeadState.cs" />
     <Compile Include="Assets\Scripts\PrefabSwitch.cs" />
     <Compile Include="Assets\Scripts\PrefabSwitchEditor.cs" />
   </ItemGroup>

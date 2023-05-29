@@ -13,7 +13,9 @@ namespace Environment
 		private bool _locked;
 		private int startNumEnemies;
 
-		private void Start()
+        public bool Locked { get => _locked; set => _locked = value; }
+
+        private void Start()
 		{
 			foreach (var interactable in keys)
 			{
@@ -43,7 +45,7 @@ namespace Environment
 
 			if (canUnlock)
 			{
-				_locked = false;
+				Locked = false;
 				this.gameObject.SetActive(false);
 			}
 		}

@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class LookAtCamera : MonoBehaviour
+namespace Behaviors
 {
-	private Transform _camera;
-	private void Awake() =>  _camera = Camera.main.transform;
-
-	private void Update()
+	public class LookAtCamera : MonoBehaviour
 	{
-		var q =  Quaternion.LookRotation(this.transform.position - _camera.position);
-		q.z = 0;
-		this.transform.rotation = q;
+		private Transform _camera;
+		private void Awake() =>  _camera = Camera.main.transform;
+
+		private void Update()
+		{
+			var q =  Quaternion.LookRotation(this.transform.position - _camera.position);
+			q.z = 0;
+			this.transform.rotation = q;
+		}
 	}
 }

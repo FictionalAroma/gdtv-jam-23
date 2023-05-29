@@ -1,16 +1,19 @@
 using Management;
 using UnityEngine;
 
-public class MainMenuController : MonoBehaviour
+namespace UI
 {
-    public void StartGameClick()
-    {
-        LevelLoader.GoToMainGame();
-    }
+	public class MainMenuController : MonoBehaviour
+	{
+		public void StartGameClick()
+		{
+			LevelLoader.GoToMainGame();
+		}
 
-    public void ExitGame()
-    {
-        LevelLoader.ExitGame();
-    }
+		public void ExitGame()
+		{
+			LevelLoader.ExitGame();
+		}
 
+	}
 }
