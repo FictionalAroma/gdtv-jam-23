@@ -13,7 +13,7 @@ namespace UI
 		private void Awake() 
 		{ 
 			// If there is an instance, and it's not me, delete myself.
-    
+			
 			if (Instance != null && Instance != this) 
 			{ 
 				Destroy(this); 
@@ -23,6 +23,7 @@ namespace UI
 				DontDestroyOnLoad(this);
 				Instance = this; 
 			}
+			playerController = FindObjectOfType<Player.PlayerController>();
 			currentPlayerHealth = playerController.MaxHP;
 		}
         private void Update()
