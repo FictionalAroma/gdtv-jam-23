@@ -6,9 +6,9 @@ namespace Enemy.Boss
 	public class BossStateContext
 	{
 
-		public Animator animator => EnemyManager.enemyAnimator;
+		public Animator animator => Boss.BossAnimator;
 		public PlayerController PlayerCache { get; set; }
-		public EnemyManager EnemyManager { get; set; }
+		public BossManager Boss { get; set; }
 
 		public BossMover Attacker { get; set; }
 	}
