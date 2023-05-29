@@ -20,7 +20,7 @@ namespace CommonComponents
 		{
 			CurrentHP -= amount;
 			HPChangedEvent?.Invoke(amount, CurrentHP);
-			if (CurrentHP > 0.0f && !isDead)
+			if (CurrentHP < 0.0f && !isDead)
 			{
 				HPEmpty?.Invoke(this);
 				isDead = true;

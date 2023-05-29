@@ -2315,10 +2315,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c23fd79cc77ac41b8d1c5ca7d7e32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainAudioSource: {fileID: 0}
-  interuptSource: {fileID: 0}
+  mainAudioSource: {fileID: 483346667}
+  interuptSource: {fileID: 483346667}
   defaultFadeSeconds: 5
-  currentClip: {fileID: 0}
+  currentClip: {fileID: 8300000, guid: dc0d90ea7d32a1b43beb8526f1033b98, type: 3}
+--- !u!82 &483346667
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483346660}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &484398347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3384,7 +3480,7 @@ PrefabInstance:
     - target: {fileID: 7162894409600045165, guid: ea18d56fa2c80ed43a22de1c997cc414,
         type: 3}
       propertyPath: <Damage>k__BackingField
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea18d56fa2c80ed43a22de1c997cc414, type: 3}
@@ -5524,6 +5620,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a05e7b241fe125141b89cfef38f59e98,
         type: 2}
+    - target: {fileID: 2621708627630751363, guid: 4282b8abc53fc6c43a54de5f566fcb79,
+        type: 3}
+      propertyPath: primaryRangedSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 59e4e0324b0858148a39526c595258a9, type: 3}
+    - target: {fileID: 2621708627630751363, guid: 4282b8abc53fc6c43a54de5f566fcb79,
+        type: 3}
+      propertyPath: secondaryRangedSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 9785d04b0ebf5d64d832bca06fe74d10, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4282b8abc53fc6c43a54de5f566fcb79, type: 3}
 --- !u!4 &1058058392 stripped
@@ -10767,6 +10873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 561996760}
     m_Modifications:
+    - target: {fileID: 1030183602, guid: 96752956f176f7e42ae317ab2e5d6697, type: 3}
+      propertyPath: keys.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1030183602, guid: 96752956f176f7e42ae317ab2e5d6697, type: 3}
       propertyPath: keyEnemies.Array.size
       value: 6

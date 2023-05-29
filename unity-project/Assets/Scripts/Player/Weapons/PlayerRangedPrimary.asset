@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerRangedPrimary
   m_EditorClassIdentifier: 
   damage: 1
-  range: 2
+  timeToLive: 2
   speed: 20
   cooldown: 0.3
   projectile: {fileID: -3172093380479723194, guid: 2e2a2be913bdd204fa95084f901963f2,

@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\UI\PlayerUIManager.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\ParticleManager.cs" />
     <Compile Include="Assets\Scripts\Behaviors\KnockbackTrigger.cs" />
+    <Compile Include="Assets\Scripts\PrefabSwitchEditor.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Management\GlobalMusicPlayer.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Interfaces\IGameStateSubscriber.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Assets\Scripts\Environment\RespawnPoint.cs" />
     <Compile Include="Assets\Scripts\Enemy\FloorTrap.cs" />
     <Compile Include="Assets\Scripts\Behaviors\IKnockbackReaction.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossAlertState.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Grenade.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSTest.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
@@ -91,9 +93,12 @@
     <Compile Include="Assets\Scripts\CommonComponents\Damagable.cs" />
     <Compile Include="Assets\Scripts\Environment\HackingConsole.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossDodgeState.cs" />
+    <Compile Include="Assets\HackingMangaer.cs" />
     <Compile Include="Assets\Scripts\Player\AnimControlScript.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\HandCannon.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossManager.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Interfaces\InteractableActor.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Explosion.cs" />
     <Compile Include="Assets\Scripts\Management\LevelLoader.cs" />
@@ -106,12 +111,16 @@
     <Compile Include="Assets\Scripts\CommonComponents\Projectile.cs" />
     <Compile Include="Assets\Scripts\UI\SliderDisplay.cs" />
     <Compile Include="Assets\Scripts\Environment\ObjectiveDoor.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossAttackState.cs" />
     <Compile Include="Assets\Scripts\SingletonRepo.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Interactable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossDeadState.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Player\Weapons\Melee.cs" />
+    <Compile Include="Assets\Scripts\PrefabSwitch.cs" />
     <Compile Include="Assets\Scripts\Behaviors\IRespawnClient.cs" />
+    <Compile Include="Assets\Scripts\Enemy\States\EnemyDeadState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Interfaces\PooledObject.cs" />
     <Compile Include="Assets\Scripts\Helpers\FadingHelperFunction.cs" />
@@ -119,6 +128,8 @@
     <Compile Include="Assets\Scripts\Player\Weapons\WeaponsSetup.cs" />
     <Compile Include="Assets\Scripts\Enemy\States\SpawnerAttackState.cs" />
     <Compile Include="Assets\Scripts\Hacking\HackingEnemyController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossBaseState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossStateContext.cs" />
     <Compile Include="Assets\Scripts\Behaviors\LookAt.cs" />
     <Compile Include="Assets\Scripts\Management\Jukebox.cs" />
     <Compile Include="Assets\Scripts\Player\Weapons\WeaponMode.cs" />
@@ -126,29 +137,18 @@
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSDisplay.cs" />
     <Compile Include="Assets\Scripts\Helpers\Vector2Extensions.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\LoopingParticleSystemsManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossStateMachine.cs" />
     <Compile Include="Assets\Scripts\Hacking\Asteroid.cs" />
     <Compile Include="Assets\Scripts\Enemy\States\EnemyAttackState.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\StateMachine\BaseState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossMover.cs" />
     <Compile Include="Assets\Scripts\Player\Input\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\Enemy\States\EnemyAlertState.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Interfaces\IDamageDealer.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossIdleState.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
-    <Compile Include="Assets\Scripts\PrefabSwitch.cs" />
-    <Compile Include="Assets\Scripts\PrefabSwitchEditor.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossMover.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossDeadState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossBaseState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossStateContext.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossAlertState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossIdleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossManager.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossAttackState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\States\EnemyDeadState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Boss\BossDodgeState.cs" />
-    <Compile Include="Assets\HackingMangaer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -804,6 +804,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{DBE41FFF-048F-B651-E8D1-D54F5A115450}</Project>
+      <Name>Unity.Recorder.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
+      <Project>{F481E86D-ED7E-9B89-9258-301B1523A20E}</Project>
+      <Name>Unity.InternalAPIEngineBridge.001</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{29613A4B-E1A8-37C5-0D90-F8093376EE22}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -835,6 +843,10 @@
     <ProjectReference Include="Unity.Searcher.Editor.csproj">
       <Project>{DFD7F6CB-E487-20D5-5CFF-CEEC5F5AA8AD}</Project>
       <Name>Unity.Searcher.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.IK.Editor.csproj">
+      <Project>{EC4B1C98-AE7F-F332-84F7-9B1463788A69}</Project>
+      <Name>Unity.2D.IK.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
       <Project>{8CE415B8-55AB-B114-9001-A47A932CF073}</Project>
@@ -876,6 +888,10 @@
       <Project>{98F92E17-48E4-DF36-B0B0-2FEF1542FCA0}</Project>
       <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
+      <Project>{D18A0884-3D43-3D7F-B04C-5F6ECDEF3B39}</Project>
+      <Name>Unity.2D.IK.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
       <Project>{7FD7C2E1-4244-C94C-6AAA-D4123DC3CA4C}</Project>
       <Name>Unity.ShaderGraph.Editor</Name>
@@ -904,13 +920,29 @@
       <Project>{BF3529F0-8642-B976-9ADF-0093F8ED7AAE}</Project>
       <Name>Unity.Mathematics.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Editor.csproj">
+      <Project>{8C66BCFF-3586-0F37-0680-D570B2AF8DC3}</Project>
+      <Name>Unity.2D.Common.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Animation.Rigging.Editor.csproj">
       <Project>{6FD330D3-6435-7179-B98E-A47C3A6FEFD9}</Project>
       <Name>Unity.Animation.Rigging.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.csproj">
+      <Project>{1154844D-4E87-2222-7646-95D7BA43C74E}</Project>
+      <Name>Unity.Recorder</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
       <Project>{79F95D55-6622-212B-D52B-D12773221F04}</Project>
       <Name>Unity.VisualScripting.Flow.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
+      <Project>{83027A5D-3240-8262-2431-B1D23289A910}</Project>
+      <Name>Unity.2D.Animation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Base.csproj">
+      <Project>{15BC07CA-A2AA-5777-AB2B-8071EA002DA3}</Project>
+      <Name>Unity.Recorder.Base</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj">
       <Project>{B178F88C-16A6-41DF-C198-145D1F138C99}</Project>
@@ -948,6 +980,14 @@
       <Project>{275D90BD-DA60-D043-16FF-389FF5841FA1}</Project>
       <Name>Unity.Burst.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{208079EB-1A7F-D9C7-E67C-18941EBEEE9B}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
+      <Project>{4CBE64AE-E7A3-6B1D-E5BE-740398CB46F4}</Project>
+      <Name>Unity.InternalAPIEditorBridge.001</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
       <Project>{BA912CCF-27A1-80B0-C5D1-3A3719BFE23F}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime</Name>
@@ -955,6 +995,10 @@
     <ProjectReference Include="Unity.ProBuilder.Editor.csproj">
       <Project>{CD882FB8-B577-C938-ADE2-72AD2523A0F6}</Project>
       <Name>Unity.ProBuilder.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Postprocessing.Editor.csproj">
+      <Project>{26D200B0-3E18-84B3-47D5-11FA9DDD729C}</Project>
+      <Name>Unity.Postprocessing.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{52660B09-A435-BE00-8548-43BFA44ED0F5}</Project>
@@ -996,6 +1040,10 @@
       <Project>{25E38346-69A7-CF0C-6B5C-CAE718DDF832}</Project>
       <Name>Unity.Burst</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
+      <Project>{2FC468FB-17CD-31FB-9442-83BE729956E2}</Project>
+      <Name>Unity.Postprocessing.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
       <Project>{58F749D6-7029-50A1-76C2-058958E46F61}</Project>
       <Name>Unity.RenderPipelines.Universal.Editor</Name>
@@ -1008,6 +1056,10 @@
       <Project>{352CE7A1-8F1D-6A07-6330-1387D51517B6}</Project>
       <Name>Unity.TerrainTools.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
+      <Project>{8D3FF2CF-AF43-AA57-6497-59276B45CE50}</Project>
+      <Name>Unity.2D.Animation.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
       <Project>{F5848CD7-B59D-D08B-7D45-4663026394A1}</Project>
       <Name>Unity.Timeline.Editor</Name>
@@ -1015,6 +1067,10 @@
     <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
       <Project>{E6E48F3A-C7BD-E408-7266-D07EC1276945}</Project>
       <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
+      <Project>{73600A34-A169-8E63-2794-92E76644563C}</Project>
+      <Name>Unity.2D.Common.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
       <Project>{18EF7F6A-8586-5A37-7DA6-DA647E7395E1}</Project>
@@ -1031,62 +1087,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{F67577C0-CD28-06F3-0B09-8407027F2EA1}</Project>
       <Name>Unity.VisualScripting.State</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.IK.Editor.csproj">
-      <Project>{EC4B1C98-AE7F-F332-84F7-9B1463788A69}</Project>
-      <Name>Unity.2D.IK.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
-      <Project>{73600A34-A169-8E63-2794-92E76644563C}</Project>
-      <Name>Unity.2D.Common.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Recorder.csproj">
-      <Project>{1154844D-4E87-2222-7646-95D7BA43C74E}</Project>
-      <Name>Unity.Recorder</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
-      <Project>{D18A0884-3D43-3D7F-B04C-5F6ECDEF3B39}</Project>
-      <Name>Unity.2D.IK.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Recorder.Base.csproj">
-      <Project>{15BC07CA-A2AA-5777-AB2B-8071EA002DA3}</Project>
-      <Name>Unity.Recorder.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
-      <Project>{83027A5D-3240-8262-2431-B1D23289A910}</Project>
-      <Name>Unity.2D.Animation.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
-      <Project>{8D3FF2CF-AF43-AA57-6497-59276B45CE50}</Project>
-      <Name>Unity.2D.Animation.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
-      <Project>{F481E86D-ED7E-9B89-9258-301B1523A20E}</Project>
-      <Name>Unity.InternalAPIEngineBridge.001</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Postprocessing.Editor.csproj">
-      <Project>{26D200B0-3E18-84B3-47D5-11FA9DDD729C}</Project>
-      <Name>Unity.Postprocessing.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Common.Editor.csproj">
-      <Project>{8C66BCFF-3586-0F37-0680-D570B2AF8DC3}</Project>
-      <Name>Unity.2D.Common.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Recorder.Editor.csproj">
-      <Project>{DBE41FFF-048F-B651-E8D1-D54F5A115450}</Project>
-      <Name>Unity.Recorder.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
-      <Project>{4CBE64AE-E7A3-6B1D-E5BE-740398CB46F4}</Project>
-      <Name>Unity.InternalAPIEditorBridge.001</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
-      <Project>{208079EB-1A7F-D9C7-E67C-18941EBEEE9B}</Project>
-      <Name>Unity.2D.Sprite.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
-      <Project>{2FC468FB-17CD-31FB-9442-83BE729956E2}</Project>
-      <Name>Unity.Postprocessing.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
