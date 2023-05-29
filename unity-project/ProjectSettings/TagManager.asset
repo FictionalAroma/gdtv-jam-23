@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Traps
+  - Spawners
+  - Walls
+  - HackingConsoles
+  - Floor
+  - BigEnemies
+  - RangedEnemies
   layers:
   - Default
   - TransparentFX
@@ -24,6 +30,7 @@ TagManager:
   - HackingPlayerProjectiles
   - HackingPlayer
   - HackingEnemy
+  - 
   - 
   - 
   - 
