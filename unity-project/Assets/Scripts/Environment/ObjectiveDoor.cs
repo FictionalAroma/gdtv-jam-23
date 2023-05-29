@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CommonComponents;
 using UnityEngine;
@@ -12,6 +13,8 @@ namespace Environment
 		[SerializeField] private bool requireAllConditions;
 		private bool _locked;
 		private int startNumEnemies;
+
+		public event Action OnOpen = null;
 
         public bool Locked { get => _locked; set => _locked = value; }
 
@@ -47,6 +50,7 @@ namespace Environment
 			{
 				Locked = false;
 				this.gameObject.SetActive(false);
+				OnOpen?.Invoke();
 			}
 		}
 

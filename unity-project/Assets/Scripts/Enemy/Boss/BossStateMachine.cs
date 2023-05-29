@@ -10,6 +10,7 @@ namespace Enemy.Boss
 		Recharge,
 		MeleeAttack,
 		RangedAttack,
+		JumpAttack,
 		ResetToCenter,
 		Dead,
 	}

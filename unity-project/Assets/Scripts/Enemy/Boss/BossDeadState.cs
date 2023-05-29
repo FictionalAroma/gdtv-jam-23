@@ -1,18 +1,17 @@
-﻿using Enemy.States;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemy.Boss
 {
-	public class BossDeadState : EnemyBaseState
+	public class BossDeadState : BossBaseState
 	{
 		float deathTime = 3f;
 		float deathTimer; 
-		public BossDeadState(GameObject obj, EnemyState state = EnemyState.Dead) : base(obj, state)
+		public BossDeadState(GameObject obj, BossState state = BossState.Dead) : base(obj, state)
 		{
 			deathTimer = deathTime;
 		}
 
-		public override EnemyState Tick()
+		public override BossState Tick()
 		{
 			deathTimer -= Time.deltaTime;
 			if (deathTimer<= 0)
