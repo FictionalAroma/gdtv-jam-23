@@ -16,16 +16,6 @@ namespace Enemy.Boss
 		public void SetContext(BossStateContext context) => Context = context;
 
 
-		protected IEnumerable<RaycastHit> GetEnemiesToActivate()
-		{
-			var enemiesToActivate = Physics.SphereCastAll(this._gameObject.transform.position,
-														  Context.EnemyManager.lookDistance,
-														  Vector3.forward,
-														  1,
-														  LayerMask.GetMask("Enemy"),
-														  QueryTriggerInteraction.Collide);
-			
-			return enemiesToActivate;
-		}
+	
 	}
 }

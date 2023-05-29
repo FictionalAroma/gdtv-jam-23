@@ -20,16 +20,14 @@ namespace Enemy.Boss
 
 		public override void Activate()
 		{
-			//Context.animator.SetBool(IsRunning,true);
-			//Context.Attacker.Target = Context.PlayerCache.transform;
-			//Context.Attacker.moveTo = true;
-			//Context.Attacker.StartShooting = true;
+			Context.animator.SetTrigger("isAlert");
+			
 		}
 
 		public override void Deactivate()
 		{
-			//Context.animator.SetBool("isRunning", false);
-			//Context.Attacker.Target = null;
+			Context.animator.SetBool("isMoving", true);
+			
 		}
 	}
 }
