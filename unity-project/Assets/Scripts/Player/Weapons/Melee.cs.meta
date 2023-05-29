@@ -5,6 +5,9 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - weaponsSetup: {fileID: 11400000, guid: f77136f3e7bfb8e4392380235dc81cf7, type: 2}
+  - player: {instanceID: 0}
+  - primaryMeleeSFX: {fileID: 8300000, guid: 9fd3869b30c97094a96353be969f3588, type: 3}
+  - secondaryMeleeSFX: {fileID: 8300000, guid: 529057c9ba37c364f9dafa617a206ede, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

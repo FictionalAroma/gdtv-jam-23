@@ -9,6 +9,8 @@ namespace Player.Weapons
 		private Coroutine _firing;
 		private Coroutine _throwing;
 		public float throwingPower;
+		[SerializeField] AudioClip primaryRangedSFX;
+		[SerializeField] AudioClip secondaryRangedSFX;
 		//IInputInteraction interaction;
 		
 
