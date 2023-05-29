@@ -1,4 +1,5 @@
-﻿using CommonComponents.Interfaces;
+﻿using System;
+using CommonComponents.Interfaces;
 using UnityEngine;
 
 namespace CommonComponents
@@ -54,9 +55,15 @@ namespace CommonComponents
 			}
 		}
 
+		private void OnCollisionEnter2D(Collision2D other)
+		{
+			if (other.gameObject.TryGetComponent<IDamageDealer>(out var damage))
+			{
+				DamageTaken?.Invoke(damage.Damage);
+			}
+		}
 
-
-        [field: SerializeField] public float MaxHP { get; set; }
+		[field: SerializeField] public float MaxHP { get; set; }
 		[field: SerializeField]public float CurrentHP { get; set; }
 		public event HPChanged HPChangedEvent;
 		public event Death HPEmpty;
