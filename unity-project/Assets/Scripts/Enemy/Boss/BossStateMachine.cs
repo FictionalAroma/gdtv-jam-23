@@ -14,7 +14,7 @@ namespace Enemy.Boss
 		Dead,
 	}
 
-    public class EnemyStateMachine : StateMachine<BossState, BossBaseState>
+    public class BossStateMachine : StateMachine<BossState, BossBaseState>
 	{
 		private BossStateContext _context;
         public BossBaseState GetCurrentState => CurrentState as BossBaseState;

@@ -13,7 +13,7 @@ namespace Enemy.Boss
 
 	public class BossManager : Damagable
 	{
-		protected EnemyStateMachine _stateMachine;
+		protected BossStateMachine _stateMachine;
 		public Animator BossAnimator;
 		protected BossMover _mover;
 
@@ -24,12 +24,12 @@ namespace Enemy.Boss
 		[SerializeField] private float TargetDistanceRanged;
 
 		[SerializeField] private List<ObjectiveDoor> rechargePoints;
-		[SerializeField] public Vector3 startPosition;
+		[SerializeField] public Transform startPosition;
 		public bool startEncounter;
 		public bool isAlreadyStarted;
 		protected override void Awake()
 		{
-			_stateMachine = GetComponent<EnemyStateMachine>();
+			
 			isAlreadyStarted = false;
 			startEncounter = false;
 			_colliderCache = GetComponents<Collider>();
@@ -45,6 +45,7 @@ namespace Enemy.Boss
 
 		private void Start()
 		{
+			_stateMachine = GetComponent<BossStateMachine>();
 			DamageTaken += _stateMachine.DamageTaken;
 			_stateMachine.AddState(new BossIdleState(gameObject));
 			_stateMachine.AddState(new BossAlertState(gameObject));

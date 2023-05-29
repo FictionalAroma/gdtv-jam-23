@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 8414025855651763754}
   - component: {fileID: 6800925780865611332}
   - component: {fileID: 5810112211827823741}
-  - component: {fileID: 2504530531216460571}
-  - component: {fileID: 6667511540312536366}
   m_Layer: 0
   m_Name: Spawners
   m_TagString: Spawners
@@ -99,31 +97,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2504530531216460571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175341930634970392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6eabb624ac7724caaf3f9c9000b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newPrefab: {fileID: 919132149155446097, guid: 91e9aac28e26bc940bc9e15cf7083852,
-    type: 3}
-  oldGameObjects: []
-  searchByTag: Spawners
---- !u!114 &6667511540312536366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175341930634970392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed52002ca773c045b2258296eee62f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

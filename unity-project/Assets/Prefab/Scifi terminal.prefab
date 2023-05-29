@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5781461817368438497}
   - component: {fileID: 1677829347310929380}
   - component: {fileID: 7581179698557012329}
+  - component: {fileID: 2651912173246402179}
   m_Layer: 0
   m_Name: Scifi terminal
   m_TagString: Untagged
@@ -116,3 +117,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.12
   m_Center: {x: -0.0008029809, y: 0.009766803, z: 0.03804312}
+--- !u!114 &2651912173246402179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420957998519764788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581ee61787fd04e4082f99a0d77a6750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionText: 
+  ItemName: 

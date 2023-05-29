@@ -23,7 +23,7 @@ namespace Enemy.Boss
 		public override void Activate()
 		{
 			Context.animator.SetTrigger("isDodging");
-			Context.Attacker.JumpToPosition(Context.EnemyManager.startPosition);
+			Context.Attacker.JumpToPosition(Context.EnemyManager.startPosition.position);
 			Context.EnemyManager.ResetPosition();
 			for (int i = 0; i<Context.EnemyManager._colliderCache.Length;i++)
             {
