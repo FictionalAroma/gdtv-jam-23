@@ -8,9 +8,8 @@ namespace Enemy.Boss
 		Idle,
 		Intro,
 		Recharge,
-		MeleeAttack,
-		RangedAttack,
-		JumpAttack,
+		Attack,
+		Dodge,
 		ResetToCenter,
 		Dead,
 	}
@@ -26,9 +25,9 @@ namespace Enemy.Boss
 			_context = new BossStateContext()
 					   {
 				
-						   EnemyManager = GetComponent<EnemyManager>(),
+						   EnemyManager = GetComponent<BossManager>(),
 						   PlayerCache = SingletonRepo.PlayerObject,
-						   Attacker = GetComponent<EnemyAttacker>(),
+						   Attacker = GetComponent<BossMover>(),
 					   };
 		}
 

@@ -23,7 +23,8 @@ namespace Enemy.Boss
 
 		public override void Activate()
 		{
-			Context.animator.SetTrigger("isDead");
+			Context.animator.SetBool("isDead",true);
+			Context.animator.SetTrigger("Death");
 			
 			Context.Attacker.StopMoving();
 		}
