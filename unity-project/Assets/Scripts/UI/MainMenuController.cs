@@ -10,7 +10,7 @@ namespace UI
 		[SerializeField] private Canvas optionsCanvas;
 		public void StartGameClick()
 		{
-			LevelLoader.GoToGameLevel();
+			LevelLoader.LoadStartScreen();
 		}
 
 		public void CreditsClick()

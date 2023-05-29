@@ -16,7 +16,7 @@ namespace CommonComponents
 			DamageTaken += OnDamageTaken;
 		}
 
-		private void OnDamageTaken(float amount)
+		protected void OnDamageTaken(float amount)
 		{
 			CurrentHP -= amount;
 			if (CurrentHP > 0.0f)

@@ -25,9 +25,12 @@ namespace Environment
 				interactable.Subscribe(OnKeyChange);
 			}
 
-			foreach (var enemy in keyEnemies)
+			if (keyEnemies != null)
 			{
-				enemy.HPEmpty += OnKeyChange;
+				foreach (var enemy in keyEnemies)
+				{
+					enemy.HPEmpty += OnKeyChange;
+				}
 			}
 
 			startNumEnemies = keyEnemies.Count;

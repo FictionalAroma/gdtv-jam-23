@@ -91,7 +91,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Escape"",
+                    ""name"": ""DoPause"",
                     ""type"": ""Button"",
                     ""id"": ""3222441e-9ac3-4941-92a1-2c1f0b20bee2"",
                     ""expectedControlType"": ""Button"",
@@ -411,12 +411,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c99646f3-bd40-4d82-ba6a-b725ddd23c9f"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""3e7143d3-e006-476a-a888-c21c073af7da"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Escape"",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""DoPause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1011,7 +1011,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
         m_Player_SwapWeapon = m_Player.FindAction("SwapWeapon", throwIfNotFound: true);
         m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
-        m_Player_Escape = m_Player.FindAction("Escape", throwIfNotFound: true);
+        m_Player_DoPause = m_Player.FindAction("DoPause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1092,7 +1092,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dodge;
     private readonly InputAction m_Player_SwapWeapon;
     private readonly InputAction m_Player_Action;
-    private readonly InputAction m_Player_Escape;
+    private readonly InputAction m_Player_DoPause;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -1104,7 +1104,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
         public InputAction @SwapWeapon => m_Wrapper.m_Player_SwapWeapon;
         public InputAction @Action => m_Wrapper.m_Player_Action;
-        public InputAction @Escape => m_Wrapper.m_Player_Escape;
+        public InputAction @DoPause => m_Wrapper.m_Player_DoPause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1135,9 +1135,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Action.started += instance.OnAction;
             @Action.performed += instance.OnAction;
             @Action.canceled += instance.OnAction;
-            @Escape.started += instance.OnEscape;
-            @Escape.performed += instance.OnEscape;
-            @Escape.canceled += instance.OnEscape;
+            @DoPause.started += instance.OnDoPause;
+            @DoPause.performed += instance.OnDoPause;
+            @DoPause.canceled += instance.OnDoPause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1163,9 +1163,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Action.started -= instance.OnAction;
             @Action.performed -= instance.OnAction;
             @Action.canceled -= instance.OnAction;
-            @Escape.started -= instance.OnEscape;
-            @Escape.performed -= instance.OnEscape;
-            @Escape.canceled -= instance.OnEscape;
+            @DoPause.started -= instance.OnDoPause;
+            @DoPause.performed -= instance.OnDoPause;
+            @DoPause.canceled -= instance.OnDoPause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1355,7 +1355,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnDodge(InputAction.CallbackContext context);
         void OnSwapWeapon(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
-        void OnEscape(InputAction.CallbackContext context);
+        void OnDoPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
