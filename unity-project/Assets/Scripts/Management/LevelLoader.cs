@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Environment;
 
 namespace Management
 {
@@ -7,12 +8,21 @@ namespace Management
     {
         public int _currentSceneIndex;
         public int _currentActiveScene;
+        public static Scene hackingScene;
+
        
-        private void Start()
+        private void OnLevelStart()
         {
+            hackingScene = SceneManager.GetSceneByName("HackingScene");
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         }
 
+        public static void LoadHacking(HackingConsole hackingConsole)
+        {
+            SceneManager.LoadScene(hackingScene.name, LoadSceneMode.Additive);
+           
+        }
+       
         internal static void ExitGame()
         {
             Application.Quit();
@@ -30,6 +40,7 @@ namespace Management
         {
             _currentActiveScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(_currentActiveScene++);
+            OnLevelStart();
         }
         public void RestartScene()
         {

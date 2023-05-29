@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b28b1895f803a408955e33f1eb78bb, type: 3}
   m_Name: PlayerMeleePrimary
   m_EditorClassIdentifier: 
-  damage: 10
-  range: 2
+  damage: 1
+  timeToLive: 2
   speed: 1
   cooldown: 5
   projectile: {fileID: 5286124137464500427, guid: 7b88b2c1f593a1a4ba23ab0b7ce06b18,
