@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 2726777419744393621}
   - component: {fileID: 1331005043488634416}
   - component: {fileID: 3863060716377621242}
+  - component: {fileID: -270809829280756748}
+  - component: {fileID: -3165595173075725241}
+  - component: {fileID: 6031684940928762737}
+  - component: {fileID: -3575483979842838598}
+  - component: {fileID: 6940946297555426638}
   m_Layer: 0
   m_Name: Teleport pad
   m_TagString: Untagged
@@ -84,3 +89,74 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-270809829280756748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358741052652249903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9953bc3d565572e4b83009a6f6d69e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3165595173075725241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358741052652249903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af71a9a8bdf45d44e8ac7f2c600ce500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxHP>k__BackingField: 10
+  <CurrentHP>k__BackingField: 10
+  spawnObject: {fileID: 1199240187425447829, guid: 353502e9db2828e4fb474b1ca8921c03,
+    type: 3}
+  spawnPoint: {fileID: 2308910264307784882, guid: a9d2cc53024bf1e479e1c9a20fb6de42,
+    type: 3}
+  spawnNumber: 4
+  spawnDelay: 10
+--- !u!114 &6031684940928762737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358741052652249903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0efce46666e1ae4b9a2dc421a0dccf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStateList: 00000000
+--- !u!114 &-3575483979842838598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358741052652249903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9953bc3d565572e4b83009a6f6d69e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &6940946297555426638
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358741052652249903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.02
+  m_Height: 0.033853594
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.05}
