@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class LookAt : MonoBehaviour
+namespace Behaviors
 {
-	[SerializeField] protected Transform lookTarget;
-	private void Update() => this.transform.rotation = Quaternion.LookRotation(this.transform.position - lookTarget.position); 
+	public class LookAt : MonoBehaviour
+	{
+		[SerializeField] protected Transform lookTarget;
+		private void Update() => this.transform.rotation = Quaternion.LookRotation(this.transform.position - lookTarget.position); 
+	}
 }

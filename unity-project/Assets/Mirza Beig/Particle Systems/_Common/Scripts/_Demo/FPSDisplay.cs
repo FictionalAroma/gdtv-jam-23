@@ -10,7 +10,7 @@ using UnityEngine.UI;
 // Define namespace.
 // =================================
 
-namespace MirzaBeig
+namespace Mirza_Beig.Particle_Systems._Common.Scripts._Demo
 {
 
     namespace ParticleSystems

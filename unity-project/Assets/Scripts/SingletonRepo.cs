@@ -1,6 +1,6 @@
 using Management;
 using Player;
-using UnityEngine;
+using UI;
 
 public class SingletonRepo
 {

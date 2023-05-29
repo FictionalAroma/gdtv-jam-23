@@ -1,36 +1,39 @@
 using CommonComponents.Interfaces;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour , IDamageDealer
+namespace CommonComponents
 {
-    public float Damage { get; set; }
-    public SphereCollider sphereCollider;
-    ParticleSystem[] explosionParticles;
-    private void Start()
-    {
-        explosionParticles = GetComponentsInChildren<ParticleSystem>();
-        foreach (var t in explosionParticles)
-		{
-			t.Play();
-		}
-        sphereCollider.radius = 4f;
-        Destroy(this.gameObject, 1f);
-    }
-
-	private void OnDisable()
+	public class Explosion : MonoBehaviour , IDamageDealer
 	{
-		foreach (var particle in explosionParticles)
+		public float Damage { get; set; }
+		public SphereCollider sphereCollider;
+		ParticleSystem[] explosionParticles;
+		private void Start()
 		{
-			particle.Pause(true);
+			explosionParticles = GetComponentsInChildren<ParticleSystem>();
+			foreach (var t in explosionParticles)
+			{
+				t.Play();
+			}
+			sphereCollider.radius = 4f;
+			Destroy(this.gameObject, 1f);
 		}
-	}
 
-	private void OnEnable()
-	{
-		foreach (var particle in explosionParticles)
+		private void OnDisable()
 		{
-			particle.Play(true);
+			foreach (var particle in explosionParticles)
+			{
+				particle.Pause(true);
+			}
 		}
-	}
 
+		private void OnEnable()
+		{
+			foreach (var particle in explosionParticles)
+			{
+				particle.Play(true);
+			}
+		}
+
+	}
 }

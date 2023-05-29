@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Enemy.States;
+using UnityEngine;
 
-namespace Enemy.States
+namespace Enemy.Boss
 {
 	public class BossDeadState : EnemyBaseState
 	{
