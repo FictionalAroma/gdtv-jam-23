@@ -63,7 +63,7 @@ namespace Player
 			HPEmpty += OnDeath;
 			HPEmpty += AnimControlScript.OnDeath;
 			_currentWeapon = weapons[0];
-			pauseMenuManager = FindObjectOfType<PauseMenuManager>();
+			pauseMenuManager = PauseMenuManager.Instance;
 		}
 
 
@@ -75,6 +75,7 @@ namespace Player
 		private InputAction _swapWeaponsAction;
 		private InputAction _secondaryAction;
 		private InputAction _activateAction;
+		private InputAction _pauseAction;
 
 		private void CacheControls()
 		{
@@ -104,6 +105,8 @@ namespace Player
 			_secondaryAction.canceled += OnSecondaryCancel;
 			_swapWeaponsAction.started += OnSwapWeapon;
 			_activateAction.performed += OnAction;
+			_pauseAction = _controls.Player.DoPause;
+			_pauseAction.performed += OnDoPause;
 		}
 
 		private void OnEnable()
@@ -114,7 +117,7 @@ namespace Player
 
 		private void OnDisable()
 		{
-			EnableControls();
+			DisableControls();
 			_characterController.enabled = false;
 		}
 		private void EnableControls()
@@ -214,6 +217,9 @@ namespace Player
 			_actor.ActionCurrent();
 		}
 
+		public void OnDoPause(InputAction.CallbackContext context) { pauseMenuManager.OpenPauseMenu(); }
+
+
 		public void OnMove(InputAction.CallbackContext context)
 		{
 			_currentMoveInputVector = !context.canceled ? context.ReadValue<Vector2>() : Vector2.zero;
@@ -254,11 +260,5 @@ namespace Player
         {
 			_controls.Disable();
         }
-
-        public void OnEscape(InputAction.CallbackContext context)
-        {
-			
-			pauseMenuManager.TogglePause();
-        }
-    }
+	}
 }

@@ -151,7 +151,7 @@ MonoBehaviour:
   <Damage>k__BackingField: 5
   moveVector: {x: 0, y: 0}
   moveThrust: 4
-  searchTimer: 0
-  searchTime: 0
+  searchTimer: 0.3
+  searchTime: 0.2
   hackingBullet: {fileID: 2315642870638069063, guid: 9fa4d24596f5190408f3b09f9ce95c54,
     type: 3}

@@ -1,4 +1,5 @@
 using Management;
+using Player;
 using TMPro;
 using UnityEngine;
 
@@ -23,6 +24,8 @@ namespace UI
 				DontDestroyOnLoad(this);
 				Instance = this; 
 			}
+
+			playerController = FindAnyObjectByType<PlayerController>();
 			currentPlayerHealth = playerController.MaxHP;
 		}
         private void Update()

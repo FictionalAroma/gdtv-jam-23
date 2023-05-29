@@ -1,3 +1,4 @@
+using System;
 using CommonComponents.Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,13 +7,27 @@ namespace UI
 {
 	public class PauseMenuManager : MonoBehaviour
 	{
-		private static PauseMenuManager _instance;
+		private static PauseMenuManager _instance = null;
 		[SerializeField] private GameObject pauseScreen;
 
 		private bool isPaused;
 		private GameState _cachedState;
 
 		public static PauseMenuManager Instance => _instance;
+
+		private void Awake()
+		{
+			if (_instance == null)
+			{
+				_instance = this;
+				DontDestroyOnLoad(gameObject);
+			}
+			else
+			{
+				Destroy(gameObject);
+			}
+
+		}
 
 		void Start()
 		{
@@ -26,22 +41,24 @@ namespace UI
 
 			SingletonRepo.StateManager.SetState(GameState.Paused);
 			isPaused = true;
+			pauseScreen.SetActive(true);
+
 		}
 		public void Resume()
 		{
 			SingletonRepo.StateManager.SetState(_cachedState);
 			isPaused = false;
+			pauseScreen.SetActive(false);
+
 
 		}
 
 		public void OnEnable()
 		{
-			pauseScreen.SetActive(true);
 		}
 
 		public void OnDisable()
 		{
-			pauseScreen.SetActive(false);
 		}
 
 		public void QuitApplication()

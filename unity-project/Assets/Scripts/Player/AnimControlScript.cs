@@ -95,6 +95,11 @@ namespace Player
             // do nothing
 		}
 
+		public void OnDoPause(InputAction.CallbackContext context)
+		{
+            //do nothin
+		}
+
 		public void OnPrimaryCancel(InputAction.CallbackContext obj)
 		{
 			playerAnimator.ResetTrigger(playerController._currentWeapon == playerController.weapons[0]

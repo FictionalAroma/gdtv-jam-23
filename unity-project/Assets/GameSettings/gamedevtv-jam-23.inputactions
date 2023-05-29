@@ -69,7 +69,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Escape",
+                    "name": "DoPause",
                     "type": "Button",
                     "id": "3222441e-9ac3-4941-92a1-2c1f0b20bee2",
                     "expectedControlType": "Button",
@@ -389,12 +389,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c99646f3-bd40-4d82-ba6a-b725ddd23c9f",
-                    "path": "<Keyboard>/escape",
+                    "id": "3e7143d3-e006-476a-a888-c21c073af7da",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Escape",
+                    "groups": "Keyboard&Mouse",
+                    "action": "DoPause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

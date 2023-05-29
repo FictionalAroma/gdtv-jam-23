@@ -7,13 +7,12 @@ namespace Hacking.Player
 {
 	public class HackingPlayerController :  Damagable, PlayerInput.IPlayerActions
 	{
-
-	
-
-    
 		public Vector2 _currentLookPosition;
 		private Vector2 _currentMoveInputVector = Vector2.zero;
 		private float _playerGrav;
+
+		[SerializeField] private TMPro.TMP_Text hpText;
+		[SerializeField] private HackingMangaer manager;
 
 		#region Serialisation
 		public HackingBullet hackingBullet;
@@ -48,8 +47,14 @@ namespace Hacking.Player
 			//var hpSlider = PlayerUIManager.Instance.PlayerHPSlider;
 			//hpSlider.MaxValue = MaxHP;
 			//hpSlider.SetToMax();
-			//HPChangedEvent += hpSlider.SetValues;
-		
+			HPChangedEvent += UpdateHP;
+			HPEmpty += manager.PlayerLose;
+
+		}
+
+		private void UpdateHP(float changeby, float newhp)
+		{
+			hpText.text = newhp.ToString("#00%");
 		}
 
 
@@ -150,12 +155,7 @@ namespace Hacking.Player
 
 			transform.rotation = Quaternion.AngleAxis(lookAngle, Vector3.forward);
 		}
-	
 		
-
-
-
-	
 		public void OnMove(InputAction.CallbackContext context)
 		{
 			_currentMoveInputVector = !context.canceled ? context.ReadValue<Vector2>() : Vector2.zero;
@@ -196,7 +196,9 @@ namespace Hacking.Player
 			throw new System.NotImplementedException();
 		}
 
-        public void OnEscape(InputAction.CallbackContext context)
+		public void OnDoPause(InputAction.CallbackContext context) { throw new NotImplementedException(); }
+
+		public void OnEscape(InputAction.CallbackContext context)
         {
             throw new NotImplementedException();
         }

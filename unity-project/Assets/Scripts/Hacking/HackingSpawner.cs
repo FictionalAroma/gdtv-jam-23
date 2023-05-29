@@ -1,4 +1,5 @@
 using CommonComponents;
+using TMPro;
 using UnityEngine;
 
 namespace Hacking
@@ -15,10 +16,19 @@ namespace Hacking
 		public float spawnTimer;
 		public float spawnTime;
 		public bool isTimeTrial;
+		[SerializeField] private TMP_Text hpText;
+		[SerializeField] private HackingMangaer mangager;
 
 		void Start()
 		{
 			this.transform.position = spawnPosition;
+			HPChangedEvent += OnHPChangedEvent;
+			HPEmpty += mangager.PlayerWin;
+		}
+
+		private void OnHPChangedEvent(float changeby, float newhp)
+		{
+			hpText.text = newhp.ToString("0");
 		}
 
 		// Update is called once per frame
@@ -30,7 +40,11 @@ namespace Hacking
 				{
 					if (timesLeftToSpawn < 0)
 					{
-						Instantiate(thingsToSpawn[Random.Range(0, thingsToSpawn.Length)], new Vector3(Random.Range(spawnPosMinX, spawnPosMaxX), Random.Range(spawnPosMinY, spawnPosMaxY), 0), Quaternion.identity);
+						var enemy = Instantiate(thingsToSpawn[Random.Range(0, thingsToSpawn.Length)], new Vector3(Random.Range(spawnPosMinX, spawnPosMaxX), Random.Range(spawnPosMinY, spawnPosMaxY), 0), Quaternion.identity);
+						if (enemy.TryGetComponent<HackingEnemyController>(out var con))
+						{
+							con.HPEmpty += EnemyDestoryed;
+						}
 						spawnTimer = spawnTime;
 					}
 				}
@@ -45,6 +59,11 @@ namespace Hacking
 			spawnTimer -= Time.deltaTime;
 
 
+		}
+
+		private void EnemyDestoryed(Damagable obj)
+		{
+			OnDamageTaken(1);
 		}
 	}
 }
