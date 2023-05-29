@@ -147,6 +147,8 @@
     <Compile Include="Assets\Scripts\Enemy\Boss\BossDeadState.cs" />
     <Compile Include="Assets\Scripts\PrefabSwitch.cs" />
     <Compile Include="Assets\Scripts\PrefabSwitchEditor.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossDodgeState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\States\EnemyDeadState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

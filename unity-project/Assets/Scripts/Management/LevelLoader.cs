@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace Management
 {
-    public class LevelLoader : MonoBehaviour
+    public class LevelLoader
     {
         private int _currentSceneIndex;
         public static void LoadStartScreen()
