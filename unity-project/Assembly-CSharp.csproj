@@ -97,7 +97,6 @@
     <Compile Include="Assets\Scripts\CommonComponents\Interfaces\InteractableActor.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Explosion.cs" />
     <Compile Include="Assets\Scripts\Management\LevelLoader.cs" />
-    <Compile Include="Assets\Scripts\Enemy\States\EnemyDeadState.cs" />
     <Compile Include="Assets\Scripts\Enemy\States\SpawnerAlertState.cs" />
     <Compile Include="Assets\Scripts\Enemy\States\EnemyBaseState.cs" />
     <Compile Include="Assets\Scripts\Hacking\HackingGrenade.cs" />
@@ -147,6 +146,8 @@
     <Compile Include="Assets\Scripts\Enemy\Boss\BossIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\BossManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\BossAttackState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\States\EnemyDeadState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\BossDodgeState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
