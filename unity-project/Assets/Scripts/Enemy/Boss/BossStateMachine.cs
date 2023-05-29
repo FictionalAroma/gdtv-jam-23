@@ -26,9 +26,9 @@ namespace Enemy.Boss
 			_context = new BossStateContext()
 					   {
 				
-						   EnemyManager = GetComponent<EnemyManager>(),
+						   Boss = GetComponent<BossManager>(),
 						   PlayerCache = SingletonRepo.PlayerObject,
-						   Attacker = GetComponent<EnemyAttacker>(),
+						   Attacker = GetComponent<BossMover>(),
 					   };
 		}
 
