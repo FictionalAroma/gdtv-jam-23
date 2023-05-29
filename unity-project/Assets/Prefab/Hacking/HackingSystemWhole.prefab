@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7040001833017884146}
+  - component: {fileID: 2758584302115102949}
+  - component: {fileID: 2758584302115102950}
   m_Layer: 0
   m_Name: HackingSystemWhole
   m_TagString: Untagged
@@ -41,6 +43,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2758584302115102949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958123436384435533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652966231a3028744b47cd91f2c6678a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2758584302115102950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958123436384435533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0efce46666e1ae4b9a2dc421a0dccf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStateList: 02000000
 --- !u!1 &2758584302064242080
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +626,6 @@ GameObject:
   - component: {fileID: 2758584303465161396}
   - component: {fileID: 2758584303465161397}
   - component: {fileID: 2758584303465161398}
-  - component: {fileID: 2758584303465161399}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -692,18 +718,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &2758584303465161399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2758584303465161392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652966231a3028744b47cd91f2c6678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2758584303608946074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1040,7 @@ PrefabInstance:
     - target: {fileID: 1268873796, guid: 0500017ce8479704794805ebb48424de, type: 3}
       propertyPath: manager
       value: 
-      objectReference: {fileID: 2758584303465161399}
+      objectReference: {fileID: 0}
     - target: {fileID: 1268873796, guid: 0500017ce8479704794805ebb48424de, type: 3}
       propertyPath: moveSpeed
       value: 12
@@ -1040,6 +1054,10 @@ PrefabInstance:
       propertyPath: playerAimTarget
       value: 
       objectReference: {fileID: 2758584303608946074}
+    - target: {fileID: 1268873796, guid: 0500017ce8479704794805ebb48424de, type: 3}
+      propertyPath: playerMoveTarget
+      value: 
+      objectReference: {fileID: 958123436384435533}
     - target: {fileID: 1268873796, guid: 0500017ce8479704794805ebb48424de, type: 3}
       propertyPath: <MaxHP>k__BackingField
       value: 100
@@ -1143,7 +1161,7 @@ PrefabInstance:
     - target: {fileID: 1568417865273346468, guid: 038465fad7564ae4d8ac4ca902be9857,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1568417865273346520, guid: 038465fad7564ae4d8ac4ca902be9857,
         type: 3}
@@ -1300,7 +1318,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mangager
       value: 
-      objectReference: {fileID: 2758584303465161399}
+      objectReference: {fileID: 2758584302115102949}
     - target: {fileID: -5065791069272090490, guid: 9f7cd52d1d2179c44b94f96fdea36b09,
         type: 3}
       propertyPath: spawnTime

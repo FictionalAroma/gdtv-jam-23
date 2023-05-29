@@ -19,11 +19,8 @@ namespace CommonComponents
 		protected void OnDamageTaken(float amount)
 		{
 			CurrentHP -= amount;
-			if (CurrentHP > 0.0f)
-			{
-				HPChangedEvent?.Invoke(amount, CurrentHP);
-			}
-			else if (!isDead)
+			HPChangedEvent?.Invoke(amount, CurrentHP);
+			if (CurrentHP > 0.0f && !isDead)
 			{
 				HPEmpty?.Invoke(this);
 				isDead = true;

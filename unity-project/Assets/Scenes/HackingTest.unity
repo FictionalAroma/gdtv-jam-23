@@ -258,16 +258,6 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2758584302115102951, guid: a696d4ed0df0c1f4dbb33a33985f8e15,
-        type: 3}
-      propertyPath: playerMoveTarget
-      value: 
-      objectReference: {fileID: 2758584302115102948}
-    - target: {fileID: 2758584302526351327, guid: a696d4ed0df0c1f4dbb33a33985f8e15,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7040001833017884146, guid: a696d4ed0df0c1f4dbb33a33985f8e15,
         type: 3}
       propertyPath: m_RootOrder
@@ -323,42 +313,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8821735246112618620, guid: a696d4ed0df0c1f4dbb33a33985f8e15,
-        type: 3}
-      propertyPath: mangager
-      value: 
-      objectReference: {fileID: 2758584302115102949}
-    m_RemovedComponents:
-    - {fileID: 2758584303465161399, guid: a696d4ed0df0c1f4dbb33a33985f8e15, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a696d4ed0df0c1f4dbb33a33985f8e15, type: 3}
---- !u!1 &2758584302115102948 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 958123436384435533, guid: a696d4ed0df0c1f4dbb33a33985f8e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 2758584302115102947}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2758584302115102949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2758584302115102948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652966231a3028744b47cd91f2c6678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2758584302115102950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2758584302115102948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0efce46666e1ae4b9a2dc421a0dccf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeStateList: 02000000
