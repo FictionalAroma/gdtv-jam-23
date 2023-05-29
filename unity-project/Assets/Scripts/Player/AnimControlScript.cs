@@ -153,6 +153,11 @@ namespace Player
 		{
 			playerAnimator.enabled = false;
 		}
-	}
+
+        public void OnEscape(InputAction.CallbackContext context)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
 
