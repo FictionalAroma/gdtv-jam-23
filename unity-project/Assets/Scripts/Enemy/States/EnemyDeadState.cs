@@ -2,11 +2,11 @@
 
 namespace Enemy.States
 {
-	public class BossDeadState : EnemyBaseState
+	public class EnemyDeadState : EnemyBaseState
 	{
 		float deathTime = 3f;
 		float deathTimer; 
-		public BossDeadState(GameObject obj, EnemyState state = EnemyState.Dead) : base(obj, state)
+		public EnemyDeadState(GameObject obj, EnemyState state = EnemyState.Dead) : base(obj, state)
 		{
 			deathTimer = deathTime;
 		}

@@ -12,7 +12,7 @@ namespace Enemy.Boss
 		[SerializeField] protected float moveSpeed = 6f;
 		[SerializeField] protected float jumpSpeed = 15.0f;
 
-
+		public float GetDistanceRemaining => _navMeshAgent.remainingDistance;
 		public Transform Target
 		{
 			get => target;
@@ -75,7 +75,7 @@ namespace Enemy.Boss
 		{
 			_navMeshAgent.enabled = false;
 		}
-
+		
 		public void SetPosition(Vector3 position) => SetNavDestination(position);
 
 		public void JumpToPosition(Vector3 position)
