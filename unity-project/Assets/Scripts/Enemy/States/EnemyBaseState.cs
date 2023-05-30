@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using CommonComponents.StateMachine;
 using Helpers;
+using Player;
 using UnityEngine;
 
 namespace Enemy.States
@@ -18,13 +19,38 @@ namespace Enemy.States
 
 		protected bool CanSeePlayer()
 		{
-			var canSeePlayer = _gameObject.CanSeeTarget(Context.PlayerCache.gameObject,
+			FieldOfView fieldOfView = this._gameObject.GetComponent<FieldOfView>();
+			return fieldOfView.canSeePlayer;
+			/*var canSeePlayer = _gameObject.CanSeeTarget(Context.PlayerCache.gameObject,
 														Context.EnemyManager.lookDistance,
 														Context.EnemyManager.lookAngle,
 														LayerMask.GetMask("Player", "Terrain", "PlayerBullets"),
 														Context.PlayerCache.GetType(),
 														true);
-			return canSeePlayer;
+			RaycastHit raycastHit;
+			var direction = (Context.PlayerCache.gameObject.transform.position - this._transform.position).normalized;
+			if (Physics.Raycast(this._transform.position, direction, out raycastHit, Context.EnemyManager.lookDistance,LayerMask.GetMask("Player","Obstacles")))
+            {
+				if (raycastHit.transform.gameObject.CompareTag("Player"))
+                {
+					Debug.Log(Context.PlayerCache);
+					Debug.Log("I see player");
+					return true;
+				}
+				else
+                {
+					return false;
+                }
+				
+            }
+            else
+            {
+				return false;
+            }*/
+			
+			
+			
+			
 		}
 
 		protected IEnumerable<RaycastHit> GetEnemiesToActivate()
@@ -39,14 +65,19 @@ namespace Enemy.States
 			
 			for (int i =0; i<enemiesToCheck.Length; i++)
             {
-				RaycastHit raycastHit = new RaycastHit();
-				if (Physics.Raycast(this._gameObject.transform.position, enemiesToCheck[i].transform.position,out raycastHit, Context.EnemyManager.lookDistance, LayerMask.GetMask("Enemy", "Obstacles"), QueryTriggerInteraction.Collide))
-				{
-					if (raycastHit.collider.gameObject.CompareTag("RangedEnemies")|| raycastHit.collider.gameObject.CompareTag("BigEnemies"))
-					enemiesToActivate.Add(enemiesToCheck[i]);
-                }
-				
-					
+				var enemychecked = enemiesToCheck[i];
+                if (enemychecked.transform.gameObject.TryGetComponent(out EnemyManager enemyManager))
+                {
+					RaycastHit raycastHit = new RaycastHit();
+					var direction =(this._gameObject.transform.position - enemychecked.transform.position).normalized;
+					if (Physics.Raycast(this._gameObject.transform.position, direction, out raycastHit, Context.EnemyManager.lookDistance, LayerMask.GetMask("Enemy", "Obstacles"), QueryTriggerInteraction.Collide))
+					{
+						Debug.Log(raycastHit.transform.gameObject.name);
+						if (raycastHit.collider.gameObject.CompareTag("RangedEnemies") || raycastHit.collider.gameObject.CompareTag("BigEnemies"))
+							enemiesToActivate.Add(enemychecked);
+					}
+				}
+			
             }
 			
 			return enemiesToActivate;

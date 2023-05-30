@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4433160090070585899}
   - component: {fileID: 7368701470866120978}
   - component: {fileID: 8376128349129564804}
+  - component: {fileID: 9062341146550252093}
   m_Layer: 7
   m_Name: EnemyRanged 1
   m_TagString: RangedEnemies
@@ -205,6 +206,28 @@ MonoBehaviour:
   takeShotRange: 4.5
   StopMovingAtRange: 1
   FireIfNotInRange: 1
+--- !u!114 &9062341146550252093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376128349611515821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbef324b8f1a3744b5f509971d6c84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 15
+  angle: 140
+  playerRef: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 64
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  canSeePlayer: 0
 --- !u!1001 &4691441369994937520
 PrefabInstance:
   m_ObjectHideFlags: 0

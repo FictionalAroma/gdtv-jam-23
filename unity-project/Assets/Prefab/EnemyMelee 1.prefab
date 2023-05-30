@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 1946867564824495124}
   - component: {fileID: 4666842827334825773}
   - component: {fileID: 2376200050670511674}
+  - component: {fileID: 3877093156658734395}
   m_Layer: 7
   m_Name: EnemyMelee 1
   m_TagString: BigEnemies
@@ -286,7 +287,7 @@ MonoBehaviour:
   <MaxHP>k__BackingField: 10
   <CurrentHP>k__BackingField: 10
   enemyAnimator: {fileID: 8025186355005611917}
-  lookDistance: 30
+  lookDistance: 15
   lookAngle: 60
 --- !u!114 &4666842827334825773
 MonoBehaviour:
@@ -319,6 +320,28 @@ MonoBehaviour:
   takeShotRange: 2
   StopMovingAtRange: 0
   FireIfNotInRange: 0
+--- !u!114 &3877093156658734395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961897824972753298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbef324b8f1a3744b5f509971d6c84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 10
+  angle: 120
+  playerRef: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 64
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  canSeePlayer: 0
 --- !u!1 &6799206531266510059
 GameObject:
   m_ObjectHideFlags: 0
