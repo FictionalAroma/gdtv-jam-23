@@ -230,6 +230,10 @@ MonoBehaviour:
   - {fileID: 0}
   keyEnemies: []
   requireAllConditions: 0
+  doorsToOpen:
+  - {fileID: 1678658378838594530}
+  - {fileID: 1086781078263260328}
+  colliderToDisable: {fileID: 1030183603}
 --- !u!208 &1030183601
 NavMeshObstacle:
   m_ObjectHideFlags: 0

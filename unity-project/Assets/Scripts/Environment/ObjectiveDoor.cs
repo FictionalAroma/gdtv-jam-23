@@ -11,6 +11,8 @@ namespace Environment
 		[SerializeField] private List<HackingConsole> keys;
 		[SerializeField] private List<Damagable> keyEnemies;
 		[SerializeField] private bool requireAllConditions;
+		[SerializeField] private GameObject[] doorsToOpen;
+		[SerializeField] private Collider colliderToDisable;
 		private bool _locked;
 		private int startNumEnemies;
 
@@ -52,7 +54,12 @@ namespace Environment
 			if (canUnlock)
 			{
 				Locked = false;
-				this.gameObject.SetActive(false);
+				for (int i = 0; i<doorsToOpen.Length; i++)
+                {
+					doorsToOpen[i].SetActive(false);
+					colliderToDisable.enabled = false;
+				}
+				
 				OnOpen?.Invoke();
 			}
 		}
