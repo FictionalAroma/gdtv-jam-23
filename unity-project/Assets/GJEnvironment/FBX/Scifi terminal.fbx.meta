@@ -3,7 +3,32 @@ guid: 91e9aac28e26bc940bc9e15cf7083852
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottom stand
+    second: {fileID: 2100000, guid: 0e67f5246c0e78644813167a90972539, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Masin body
+    second: {fileID: 2100000, guid: b86a41085cfa68c4d96f250e16d6ca6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal handle
+    second: {fileID: 2100000, guid: ba72c96166c8f964e8bfefcb003e72cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipes
+    second: {fileID: 2100000, guid: 628b3eb8653f2424e8bdf5844e605616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screenbottom
+    second: {fileID: 2100000, guid: 80c429c9abfdc6e41b01fdf63f6d5437, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
