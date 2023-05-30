@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49028725af7b35442a2746381289ae4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateText: {fileID: 0}
-  HPslider: {fileID: 0}
+  _stateText: {fileID: 4704349126424412259}
+  HPslider: {fileID: 6081624351360382183}
   displayMode: 0
   <MaxValue>k__BackingField: 0
 --- !u!114 &4433160090070585899

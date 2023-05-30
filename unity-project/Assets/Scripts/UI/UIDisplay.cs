@@ -27,7 +27,11 @@ namespace UI
 
         public void SetToMax()
 		{
-			HPslider.value = this.MaxValue;
+            if(HPslider != null)
+            {
+                HPslider.value = this.MaxValue;
+            }
+			
 		}
         public void SetUIState(bool state)
         {
