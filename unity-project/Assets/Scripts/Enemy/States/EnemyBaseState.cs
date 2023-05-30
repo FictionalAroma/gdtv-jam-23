@@ -29,12 +29,25 @@ namespace Enemy.States
 
 		protected IEnumerable<RaycastHit> GetEnemiesToActivate()
 		{
-			var enemiesToActivate = Physics.SphereCastAll(this._gameObject.transform.position,
+			var enemiesToCheck = Physics.SphereCastAll(this._gameObject.transform.position,
 														  Context.EnemyManager.lookDistance,
 														  Vector3.forward,
 														  1,
 														  LayerMask.GetMask("Enemy"),
 														  QueryTriggerInteraction.Collide);
+			List<RaycastHit> enemiesToActivate = new List<RaycastHit>();
+			
+			for (int i =0; i<enemiesToCheck.Length; i++)
+            {
+				RaycastHit raycastHit = new RaycastHit();
+				if (Physics.Raycast(this._gameObject.transform.position, enemiesToCheck[i].transform.position,out raycastHit, Context.EnemyManager.lookDistance, LayerMask.GetMask("Enemy", "Obstacles"), QueryTriggerInteraction.Collide))
+				{
+					if (raycastHit.collider.gameObject.CompareTag("RangedEnemies")|| raycastHit.collider.gameObject.CompareTag("BigEnemies"))
+					enemiesToActivate.Add(enemiesToCheck[i]);
+                }
+				
+					
+            }
 			
 			return enemiesToActivate;
 		}

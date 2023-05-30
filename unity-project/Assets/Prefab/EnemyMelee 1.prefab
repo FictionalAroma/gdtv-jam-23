@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2376200050670511674}
   m_Layer: 7
   m_Name: EnemyMelee 1
-  m_TagString: Untagged
+  m_TagString: BigEnemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,8 +267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49028725af7b35442a2746381289ae4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sliderValueText: {fileID: 7478265363926537820}
-  _slider: {fileID: 0}
+  _stateText: {fileID: 0}
+  HPslider: {fileID: 0}
   displayMode: 0
   <MaxValue>k__BackingField: 0
 --- !u!114 &1946867564824495124

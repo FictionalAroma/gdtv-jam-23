@@ -109,7 +109,7 @@
     <Compile Include="Assets\Scripts\CommonComponents\Interfaces\BaseWeapon.cs" />
     <Compile Include="Assets\Scripts\Hacking\HackingSpawner.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Projectile.cs" />
-    <Compile Include="Assets\Scripts\UI\SliderDisplay.cs" />
+    <Compile Include="Assets\Scripts\UI\UIDisplay.cs" />
     <Compile Include="Assets\Scripts\Environment\ObjectiveDoor.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\BossAttackState.cs" />
     <Compile Include="Assets\Scripts\SingletonRepo.cs" />
@@ -149,6 +149,7 @@
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
+    <Compile Include="Assets\LevelEndObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
