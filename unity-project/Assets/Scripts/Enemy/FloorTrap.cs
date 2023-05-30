@@ -22,7 +22,8 @@ namespace Enemy
 		[SerializeField] private bool stopCooldownTimer;
 		[SerializeField] private float trapActiveTime;
 		[SerializeField] private bool coroutineIsCalled;
-		[SerializeField] public bool forceTrapActivation;
+		[SerializeField] Interactable Interactable;
+		[SerializeField] private bool oneAndDone;
 		public bool isActivated;
 		private bool _locked;
 		private int startNumEnemies;
@@ -30,7 +31,6 @@ namespace Enemy
 
 		void Start()
 		{
-			forceTrapActivation = false;
 			coroutineIsCalled = false;
 			trapEnabled = false;
 			isActivated = false;
@@ -58,14 +58,11 @@ namespace Enemy
             {
 				trapCooldownTimer -= Time.deltaTime;
             }
-			if (trapCooldownTimer <= 0 && coroutineIsCalled == false && forceTrapActivation == false)
+			if (trapCooldownTimer <= 0 && coroutineIsCalled == false && oneAndDone == false)
             {
 				ActivateTrapOnCooldown();
             }
-			if (forceTrapActivation)
-            {
-				isActivated = true;
-            }
+			
 			if (isActivated)
 			{
 				boxCollider.enabled = true;
@@ -81,22 +78,30 @@ namespace Enemy
 	
 		private void OnKeyChange()
 		{
-			bool canUnlock = false;
-			if (keys.Count > 0)
-			{
-				canUnlock |= keys.All(console => console.ActiveState);
-			}
+			if (oneAndDone)
+            {
+				StartCoroutine(ForceActivateTrapAndDisable());
+            }
+			else
+            {
+				bool canUnlock = false;
+				if (keys.Count > 0)
+				{
+					canUnlock |= keys.All(console => console.ActiveState);
+				}
 
-			if (startNumEnemies > 0 && (requireAllConditions || keys.Count == 0))
-			{
-				canUnlock |= keyEnemies.Count == 0;
-			}
+				if (startNumEnemies > 0 && (requireAllConditions || keys.Count == 0))
+				{
+					canUnlock |= keyEnemies.Count == 0;
+				}
 
-			if (canUnlock)
-			{
-				_locked = false;
-				this.gameObject.SetActive(false);
+				if (canUnlock)
+				{
+					_locked = false;
+					this.gameObject.SetActive(false);
+				}
 			}
+			
 		}
 
 		private void OnKeyChange(Damagable health)
@@ -115,6 +120,12 @@ namespace Enemy
 			trapEnabled = false;
 			trapCooldownTimer = trapCooldownTime;
 			coroutineIsCalled = false;
+        }
+		public  IEnumerator ForceActivateTrapAndDisable()
+        {
+			isActivated = true;
+			yield return new WaitForSeconds(3);
+			isActivated = false;
         }
 	}
 }
