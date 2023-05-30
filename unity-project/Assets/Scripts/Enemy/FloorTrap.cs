@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using CommonComponents;
@@ -16,12 +17,24 @@ namespace Enemy
 		[SerializeField] private List<HackingConsole> keys;
 		[SerializeField] private List<Damagable> keyEnemies;
 		[SerializeField] private bool requireAllConditions;
+		[SerializeField] private float trapCooldownTime;
+		[SerializeField] private float trapCooldownTimer;
+		[SerializeField] private bool stopCooldownTimer;
+		[SerializeField] private float trapActiveTime;
+		[SerializeField] private bool coroutineIsCalled;
+		[SerializeField] public bool forceTrapActivation;
+		public bool isActivated;
 		private bool _locked;
 		private int startNumEnemies;
 
 
 		void Start()
 		{
+			forceTrapActivation = false;
+			coroutineIsCalled = false;
+			trapEnabled = false;
+			isActivated = false;
+			trapCooldownTimer = trapCooldownTime;
 			foreach (var interactable in keys)
 			{
 				interactable.Subscribe(OnKeyChange);
@@ -41,7 +54,19 @@ namespace Enemy
 		// Update is called once per frame
 		void Update()
 		{
-			if (trapEnabled)
+			if (stopCooldownTimer == false)
+            {
+				trapCooldownTimer -= Time.deltaTime;
+            }
+			if (trapCooldownTimer <= 0 && coroutineIsCalled == false && forceTrapActivation == false)
+            {
+				ActivateTrapOnCooldown();
+            }
+			if (forceTrapActivation)
+            {
+				isActivated = true;
+            }
+			if (isActivated)
 			{
 				boxCollider.enabled = true;
 				flameVFX.SetActive(true);
@@ -79,5 +104,17 @@ namespace Enemy
 			keyEnemies.Remove(health);
 			OnKeyChange();
 		}
+		public IEnumerator ActivateTrapOnCooldown()
+        {
+			coroutineIsCalled = true;
+			trapActiveTime = Random.Range(1, 3);
+			trapEnabled = true;
+			stopCooldownTimer = true;
+			yield return new WaitForSeconds(trapActiveTime);
+			stopCooldownTimer = false;
+			trapEnabled = false;
+			trapCooldownTimer = trapCooldownTime;
+			coroutineIsCalled = false;
+        }
 	}
 }
