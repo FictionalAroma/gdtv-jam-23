@@ -11,6 +11,8 @@ TagManager:
   - Floor
   - BigEnemies
   - RangedEnemies
+  - LevelEnd
+  - LevelStart
   layers:
   - Default
   - TransparentFX

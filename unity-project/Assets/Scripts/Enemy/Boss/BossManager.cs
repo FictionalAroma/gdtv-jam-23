@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Enemy.Boss
 {
-	[RequireComponent(typeof(SliderDisplay))]
+	[RequireComponent(typeof(UIDisplay))]
 	[RequireComponent(typeof(EnemyStateMachine))]
 	[RequireComponent(typeof(BossMover))]
 
@@ -19,7 +19,7 @@ namespace Enemy.Boss
 
 		public Collider[] _colliderCache;
 
-		protected SliderDisplay _hpBar;
+		protected UIDisplay _hpBar;
 		[SerializeField] private float TargetDistanceMelee;
 		[SerializeField] private float TargetDistanceRanged;
 
@@ -35,8 +35,9 @@ namespace Enemy.Boss
 			_colliderCache = GetComponents<Collider>();
 			base.Awake();
 
-			_hpBar = GetComponent<SliderDisplay>();
-			HPChangedEvent += _hpBar.SetValues;
+			_hpBar = GetComponent<UIDisplay>();
+			
+			HPChangedEvent += _hpBar.SetSliderValue;
 			HPEmpty += OnDeath;
 
 			_mover = GetComponent<BossMover>();

@@ -34,7 +34,7 @@ namespace Enemy.States
 
 		public override void Activate()
 		{
-			Context.animator.SetBool(IsRunning,true);
+			
 			Context.Attacker.Target = Context.PlayerCache.transform;
 			Context.Attacker.moveTo = true;
 			Context.Attacker.StartShooting = true;

@@ -116,6 +116,13 @@ MonoBehaviour:
   keys: []
   keyEnemies: []
   requireAllConditions: 0
+  trapCooldownTime: 3
+  trapCooldownTimer: 0
+  stopCooldownTimer: 0
+  trapActiveTime: 0
+  coroutineIsCalled: 0
+  forceTrapActivation: 0
+  isActivated: 0
 --- !u!1001 &6633608537878773237
 PrefabInstance:
   m_ObjectHideFlags: 0

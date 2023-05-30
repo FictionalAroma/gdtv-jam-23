@@ -40,7 +40,7 @@ namespace UI
         }
 
 
-        [field: SerializeField] public SliderDisplay PlayerHPSlider { get; private set; }
+        [field: SerializeField] public UIDisplay PlayerHPSlider { get; private set; }
 		[field: SerializeField] public TMP_Text Score { get; private set;}
 	}
 }

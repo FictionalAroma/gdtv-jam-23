@@ -18,7 +18,6 @@ namespace CommonComponents
 		{
 			
 			_timeToLive -= Time.deltaTime;
-			Debug.Log(_timeToLive);
 			if (_timeToLive<0)
             {
 				_timeToLive = 0;

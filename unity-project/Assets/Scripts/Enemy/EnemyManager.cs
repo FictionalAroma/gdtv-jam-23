@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-	[RequireComponent(typeof(SliderDisplay))]
+	[RequireComponent(typeof(UIDisplay))]
 	[RequireComponent(typeof(EnemyStateMachine))]
 	public class EnemyManager : Damagable
 	{
@@ -13,7 +13,7 @@ namespace Enemy
 		public Animator enemyAnimator;
 		protected EnemyMover _mover;
 
-		protected SliderDisplay _hpBar;
+		protected UIDisplay _hpBar;
         public float lookDistance = 30f;
 		public float lookAngle = 60f;
 		private bool _attackImmediate = false;
@@ -25,8 +25,8 @@ namespace Enemy
 
 			base.Awake();
 
-			_hpBar = GetComponent<SliderDisplay>();
-			HPChangedEvent += _hpBar.SetValues;
+			_hpBar = GetComponent<UIDisplay>();
+			HPChangedEvent += _hpBar.SetSliderValue;
 			HPEmpty += OnDeath;
 			
 			_mover = GetComponent<EnemyMover>();

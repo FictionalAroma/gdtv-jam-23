@@ -60,7 +60,7 @@ namespace Player
 			var hpSlider = PlayerUIManager.Instance.PlayerHPSlider;
 			hpSlider.MaxValue = MaxHP;
 			hpSlider.SetToMax();
-            HPChangedEvent += hpSlider.SetValues;
+            HPChangedEvent += hpSlider.SetSliderValue;
 			HPEmpty += OnDeath;
 			HPEmpty += AnimControlScript.OnDeath;
 			_currentWeapon = weapons[0];
