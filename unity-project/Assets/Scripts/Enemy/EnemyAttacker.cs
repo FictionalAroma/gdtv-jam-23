@@ -21,7 +21,7 @@ namespace Enemy
 		protected override void Awake()
 		{
 			base.Awake();
-
+			animator = GetComponent<EnemyManager>().enemyAnimator;
 			_bulletPool = new ObjectCachePool<Projectile>(weaponSetup.projectile, 5);
 		}
 
@@ -41,7 +41,7 @@ namespace Enemy
 				var bullet = _bulletPool.PullObject();
 				var position = transform.position;
 				bullet.Initialize(position, weaponSetup.speed, weaponSetup.timeToLive, weaponSetup.damage);
-				animator = GetComponent<EnemyManager>().enemyAnimator;
+				animator.SetBool("isRunning", false);
 				animator.SetInteger("meleeAttackVaration", Random.Range(0, 2));
 				animator.SetTrigger("isShooting");
 				bullet.Fire((Target.position - position).normalized);
@@ -50,6 +50,7 @@ namespace Enemy
 
 			if (moveTo && _moveAdjustmentTimer < 0f && (!inRange || !StopMovingAtRange) )
 			{
+				animator.SetBool("isRunning", true);
 				SetNavDestination(Target.position);
 				_navMeshAgent.stoppingDistance = StopMovingAtRange ? takeShotRange : 0;
 			}

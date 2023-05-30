@@ -202,7 +202,7 @@ MonoBehaviour:
   targetPositionUpdateFrequency: 0.5
   target: {fileID: 0}
   weaponSetup: {fileID: 11400000, guid: 3c6c9d4823352f745839d2eb4c33248d, type: 2}
-  takeShotRange: 10
+  takeShotRange: 4.5
   StopMovingAtRange: 1
   FireIfNotInRange: 1
 --- !u!1001 &4691441369994937520
