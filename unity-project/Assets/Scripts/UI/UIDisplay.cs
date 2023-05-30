@@ -26,32 +26,20 @@ namespace UI
         }
 
         public void SetToMax()
-        {
-            
-        }
+		{
+			HPslider.value = this.MaxValue;
+		}
         public void SetUIState(bool state)
         {
             HPslider.enabled = !state;
             _stateText.enabled = state;
-            if (HPslider.enabled == true)
-            {
-                displayMode = UIDisplayMode.SliderValue;
-                
-            }
-            else
-            {
-                displayMode = UIDisplayMode.State;
-            }
+            displayMode = HPslider.enabled == true ? UIDisplayMode.SliderValue : UIDisplayMode.State;
         }
 
         public void SetSliderValue(float amountChanged,float value)
         {
-          
-            value -= amountChanged;
-            var percentageValue = (value / MaxValue) * 100f;
-            HPslider.value = percentageValue;
-                   
-        }
+			HPslider.value = value;
+		}
         public void SetTextValue(string state)
         {
             _stateText.text = state;
