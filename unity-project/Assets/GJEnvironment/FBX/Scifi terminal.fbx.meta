@@ -29,6 +29,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Screenbottom
     second: {fileID: 2100000, guid: 80c429c9abfdc6e41b01fdf63f6d5437, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screentop
+    second: {fileID: 2100000, guid: b237873d8442fa14e93275dc56cc9ba9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
