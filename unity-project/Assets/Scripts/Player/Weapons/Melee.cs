@@ -29,7 +29,7 @@ namespace Player.Weapons
 		}
 		public override void CancelPrimaryAttack(Vector3 lookDir)
 		{
-			isPrimaryAttacking = false;
+			playerPrimaryAttacking = false;
 		}
 		private IEnumerator PunchingRepeater()
 		{
@@ -44,7 +44,7 @@ namespace Player.Weapons
 					primaryAttackCheck.Initialize(transform.position + transform.forward, 0, setup.speed, setup.damage);
 					player.GetComponent<PlayerController>().jukeBox.PlayOneShot(primaryMeleeSFX);
 					playerAnimator.SetInteger("primaryMeleePunchVaration", Random.Range(1, 3));
-					player.GetComponent<Animator>().SetTrigger("primaryMeleePunch");
+					playerAnimator.SetTrigger("primaryMeleePunch");
 					primaryAttackCheck.GetComponent<SphereCollider>().radius = setup.timeToLive;
 					yield return new WaitForSeconds(setup.cooldown);
 					canPrimaryAttack = true;
