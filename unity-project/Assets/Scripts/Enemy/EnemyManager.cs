@@ -59,7 +59,13 @@ namespace Enemy
 		protected void OnDeath(Damagable damagable)
 		{
 			_stateMachine.SwapState(EnemyState.Dead);
-			
+			var colliders = GetComponents<Collider>();
+			foreach (var col in colliders)
+			{
+				col.enabled = false;
+			}
+
+			_hpBar.enabled = false;
 		}
 		
 

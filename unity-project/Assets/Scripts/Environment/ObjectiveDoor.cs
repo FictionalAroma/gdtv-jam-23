@@ -53,6 +53,8 @@ namespace Environment
 					}
 				}
 
+				startNumEnemies = keyEnemies.Count;
+
 			}
 
 		}
