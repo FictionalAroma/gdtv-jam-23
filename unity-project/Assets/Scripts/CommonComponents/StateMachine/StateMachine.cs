@@ -23,8 +23,11 @@ namespace CommonComponents.StateMachine
 
 		public void Update()
 		{
-			var newStateEnum = CurrentState.Tick();
-			TrySwapState(newStateEnum);
+			if (CurrentState != null)
+			{
+				var newStateEnum = CurrentState.Tick();
+				TrySwapState(newStateEnum);
+			}
 
 		}
 		public virtual T TrySwapState(E newStateEnum)

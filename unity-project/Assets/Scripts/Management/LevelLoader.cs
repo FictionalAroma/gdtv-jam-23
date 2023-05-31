@@ -29,12 +29,12 @@ namespace Management
         }
         public static void LoadStartScreen()
         {
-            SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(0).name, LoadSceneMode.Single);
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
 
         public static void GoToGameLevel()
-        {
-            SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(1).name, new LoadSceneParameters(LoadSceneMode.Single, LocalPhysicsMode.Physics3D));
+		{
+            SceneManager.LoadScene(1, new LoadSceneParameters(LoadSceneMode.Single, LocalPhysicsMode.Physics3D));
         }
         public void LoadNextScene()
         {

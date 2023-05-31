@@ -93,10 +93,12 @@
     <Compile Include="Assets\Scripts\Environment\HackingConsole.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenuManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\BossDodgeState.cs" />
+    <Compile Include="Assets\HackingMangaer.cs" />
     <Compile Include="Assets\Scripts\Player\AnimControlScript.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\HandCannon.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\BossManager.cs" />
+    <Compile Include="Assets\LevelEndObject.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Interfaces\InteractableActor.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Explosion.cs" />
     <Compile Include="Assets\Scripts\Management\LevelLoader.cs" />
@@ -146,8 +148,6 @@
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
-    <Compile Include="Assets\LevelEndObject.cs" />
-    <Compile Include="Assets\HackingMangaer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

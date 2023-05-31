@@ -22,12 +22,19 @@ namespace UI
 
         public void Awake()
         {
-            if(HPslider != null) HPslider.maxValue = MaxValue;
+			if (HPslider != null)
+			{
+				HPslider.maxValue = MaxValue;
+			}
         }
 
         public void SetToMax()
 		{
-			HPslider.value = this.MaxValue;
+			if (HPslider != null)
+			{
+				HPslider.value = this.MaxValue;
+			}
+
 		}
         public void SetUIState(bool state)
         {
