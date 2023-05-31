@@ -94,6 +94,7 @@ namespace Player.Weapons
 				//player.GetComponent<PlayerController>().jukeBox.PlayOneShot(secondaryMeleeSFX);
 				_secondaryAttackCheck.GetComponent<SphereCollider>().radius = setup.speed;
 				_secondaryAttackCheck.GetComponent<ParticleSystem>().Play();
+				
 			}
 			else
             {
