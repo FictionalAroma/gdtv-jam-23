@@ -1156,6 +1156,11 @@ PrefabInstance:
       propertyPath: canSecondaryAttack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2123548247, guid: 4282b8abc53fc6c43a54de5f566fcb79, type: 3}
+      propertyPath: _secondaryAttackExplosion
+      value: 
+      objectReference: {fileID: 8776428679239407099, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
     - target: {fileID: 2621708627619808611, guid: 4282b8abc53fc6c43a54de5f566fcb79,
         type: 3}
       propertyPath: m_RootOrder
@@ -2190,3 +2195,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8ab3486b8f5c74eaccf391e2efa943, type: 3}
+--- !u!1001 &8776428678680367087
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407098, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776428679239407099, guid: 26453316336f9614c9af9e93ad1ea65b,
+        type: 3}
+      propertyPath: m_Name
+      value: MeleeSecondaryExplosion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26453316336f9614c9af9e93ad1ea65b, type: 3}

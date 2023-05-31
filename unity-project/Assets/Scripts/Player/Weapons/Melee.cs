@@ -13,6 +13,7 @@ namespace Player.Weapons
 		[SerializeField] AudioClip secondaryMeleeSFX;
 		[SerializeField] bool canPrimaryAttack = true;
 		[SerializeField] Animator playerAnimator;
+		[SerializeField] GameObject _secondaryAttackExplosion;
 		private bool playerPrimaryAttacking = false;
 		private bool isPrimaryAttacking = false;
 
@@ -44,7 +45,7 @@ namespace Player.Weapons
 					//player.GetComponent<PlayerController>().jukeBox.PlayOneShot(primaryMeleeSFX);
 					playerAnimator.SetInteger("primaryMeleePunchVaration", Random.Range(1, 3));
 					playerAnimator.SetTrigger("primaryMeleePunch");
-					primaryAttackCheck.GetComponent<SphereCollider>().radius = setup.timeToLive;
+					primaryAttackCheck.GetComponent<CapsuleCollider>().radius = setup.timeToLive;
 					yield return new WaitForSeconds(setup.cooldown);
 					canPrimaryAttack = true;
 				}
@@ -88,11 +89,13 @@ namespace Player.Weapons
 				var setup = weaponsSetup.secondary;
 				var _secondaryAttackCheck = GetNextBullet(setup, SecondaryShotPool);
 				_secondaryAttackCheck.Initialize(transform.position + transform.forward, 0, setup.timeToLive, setup.damage);
+				var explosion = Instantiate(_secondaryAttackExplosion, (transform.position + transform.forward), Quaternion.identity);
 				playerAnimator.ResetTrigger("isHoldingMelee");
 				playerAnimator.SetTrigger("isExplodingMelee");
 				//player.GetComponent<PlayerController>().jukeBox.PlayOneShot(secondaryMeleeSFX);
-				_secondaryAttackCheck.GetComponent<SphereCollider>().radius = setup.speed;
+				_secondaryAttackCheck.GetComponent<CapsuleCollider>().radius = setup.speed;
 				_secondaryAttackCheck.GetComponent<ParticleSystem>().Play();
+				Destroy(explosion, 1f);
 				
 			}
 			else
