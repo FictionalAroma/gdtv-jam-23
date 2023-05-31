@@ -36,6 +36,8 @@ namespace Player.Weapons
 		public override void CancelPrimaryAttack(Vector3 lookDir)
 		{
 			playerIsAttacking = false;
+			playerAnimator.ResetTrigger("primaryRangedShot");
+			playerAnimator.SetBool("isShooting", false);
 		}
 
 		private IEnumerator FiringRepeater()
