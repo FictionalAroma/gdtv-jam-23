@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hackingMode: 0
+  toKillText: {fileID: 2758584302700225795}
 --- !u!114 &2758584302115102950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,7 +1257,7 @@ PrefabInstance:
     - target: {fileID: 1568417865273346468, guid: 038465fad7564ae4d8ac4ca902be9857,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1568417865273346520, guid: 038465fad7564ae4d8ac4ca902be9857,
         type: 3}

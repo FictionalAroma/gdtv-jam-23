@@ -1,5 +1,6 @@
 using CommonComponents;
 using Hacking.Player;
+using Management;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -101,11 +102,11 @@ public class HackingManager : MonoBehaviour
 
     public void PlayerWin(Damagable obj)
 	{
-		
+		LevelLoader.ExitHacking(true);
 	}
 
 	public void PlayerLose(Damagable obj)
 	{
-		
+		LevelLoader.ExitHacking(false);
 	}
 }
