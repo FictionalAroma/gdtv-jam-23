@@ -15,6 +15,6 @@ MonoBehaviour:
   damage: 1
   timeToLive: 2
   speed: 1
-  cooldown: 5
+  cooldown: 1
   projectile: {fileID: 5286124137464500427, guid: 7b88b2c1f593a1a4ba23ab0b7ce06b18,
     type: 3}

@@ -3,7 +3,42 @@ guid: 0aebd287276a8884d86f63d2a3a9c3c4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass Down
+    second: {fileID: 2100000, guid: 51bf176015ee8a942bf9cd096c44930d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassDesigntop
+    second: {fileID: 2100000, guid: ea2fee934f5751b4e8366383af1d5d45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Stand
+    second: {fileID: 2100000, guid: b773bfefba71d3d4f94e01f496941115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_door
+    second: {fileID: 2100000, guid: c33a61a1261e5674ab5247d6511466ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MiddleFrame
+    second: {fileID: 2100000, guid: 8543ba42d1566544db04eaeaec84362f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Switch metal
+    second: {fileID: 2100000, guid: 1d678a67e35914743ae8c1cb6d8853ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Switch_emissive
+    second: {fileID: 2100000, guid: 56dbc414f2fa6974180bf033e66d7cf3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

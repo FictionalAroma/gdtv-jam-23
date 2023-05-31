@@ -12,7 +12,7 @@ namespace Hacking.Player
 		private float _playerGrav;
 
 		[SerializeField] private TMPro.TMP_Text hpText;
-		[SerializeField] private HackingMangaer manager;
+		[SerializeField] private HackingManager manager;
 
 		#region Serialisation
 		public HackingBullet hackingBullet;

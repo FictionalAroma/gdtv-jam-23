@@ -11,6 +11,9 @@ namespace Player.Weapons
 		public float throwingPower;
 		[SerializeField] AudioClip primaryRangedSFX;
 		[SerializeField] AudioClip secondaryRangedSFX;
+		[SerializeField] bool canPrimaryAttack = true;
+		[SerializeField] bool canSecondaryAttack = true;
+		Player.PlayerController Player;
 		//IInputInteraction interaction;
 		
 
@@ -33,13 +36,20 @@ namespace Player.Weapons
 		{
 			while (true)
 			{
-				var setup = weaponsSetup.primary;
-				var lazer = GetNextBullet(weaponsSetup.primary, PrimaryShotPool);
+				if (canPrimaryAttack)
+                {
+					canPrimaryAttack = false;
+					var setup = weaponsSetup.primary;
+					var lazer = GetNextBullet(weaponsSetup.primary, PrimaryShotPool);
 
-				lazer.Initialize(transform.position, setup.speed, setup.timeToLive, setup.damage);
-
-				lazer.Fire(FireDirection.normalized);
-				yield return new WaitForSeconds(setup.cooldown);
+					lazer.Initialize(transform.position, setup.speed, setup.timeToLive, setup.damage);
+					Player.GetComponent<Animator>().SetTrigger("primaryRangedShot");
+					Player.GetComponent<Animator>().SetBool("isShooting", true);
+					lazer.Fire(FireDirection.normalized);
+					yield return new WaitForSeconds(setup.cooldown);
+					canPrimaryAttack = true;
+				}
+				
 			}
 		}
 

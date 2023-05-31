@@ -133,7 +133,7 @@ namespace Player
         private void Update()
         {
             
-            directionCurrentMove = currentMoveInput.normalized - currentLookPosition.normalized;
+            directionCurrentMove =currentMoveInput.normalized;
             if (currentMoveInput == Vector2.zero)
             {
                 playerAnimator.SetBool("isRunning", false);

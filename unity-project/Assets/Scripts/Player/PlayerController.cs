@@ -233,7 +233,11 @@ namespace Player
 			//Debug.Log($"Look Vector From Object {_currentLookPosition}");
 		}
 
-		public void OnPrimary(InputAction.CallbackContext context) { _currentWeapon.BeginPrimaryAttack(_lookDir); }
+		public void OnPrimary(InputAction.CallbackContext context)
+		{
+			
+			_currentWeapon.BeginPrimaryAttack(_lookDir); 
+		}
 
 		public void OnPrimaryCancel(InputAction.CallbackContext obj) { _currentWeapon.CancelPrimaryAttack(_lookDir); }
 		
