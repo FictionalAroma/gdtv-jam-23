@@ -102,7 +102,7 @@ RectTransform:
   m_GameObject: {fileID: 578214608431494229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8527426290749417618}
@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5798393718000991999
 RectTransform:
   m_ObjectHideFlags: 0
@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 2651542506745513689}
   - component: {fileID: 2928773604473758285}
   - component: {fileID: 6953372616972900483}
+  - component: {fileID: 129081772461341211}
   m_Layer: 5
   m_Name: EnemyUIDisplay
   m_TagString: Untagged
@@ -567,6 +568,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1646e2251ff7c3d4db973ba92692b570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &129081772461341211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501223876579953762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49028725af7b35442a2746381289ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateText: {fileID: 0}
+  HPslider: {fileID: 1548424847542825047}
+  displayMode: 0
+  <MaxValue>k__BackingField: 10
 --- !u!1 &8643352921522997460
 GameObject:
   m_ObjectHideFlags: 0

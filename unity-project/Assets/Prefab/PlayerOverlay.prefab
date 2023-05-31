@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b633da3897ac241963bfd34fa201d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayerHealth: 0
+  currentPlayerHealth: 100
   <PlayerHPSlider>k__BackingField: {fileID: 734827204471898756}
   <Score>k__BackingField: {fileID: 734827204279826195}
 --- !u!1 &734827203261240139
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49028725af7b35442a2746381289ae4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sliderValueText: {fileID: 734827204462820617}
-  _slider: {fileID: 734827203261240133}
+  _stateText: {fileID: 734827204322285697}
+  HPslider: {fileID: 734827203261240133}
   displayMode: 0
   <MaxValue>k__BackingField: 100
