@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Management\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\MeleeHit.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Interfaces\IHealth.cs" />
+    <Compile Include="Assets\Scripts\Hacking\HackingMangaer.cs" />
     <Compile Include="Assets\Scripts\Enemy\OscillatorTrap.cs" />
     <Compile Include="Assets\Scripts\Player\Weapons\Ranged.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\ObjectCachePool.cs" />
@@ -89,10 +90,12 @@
     <Compile Include="Assets\Scripts\Enemy\FieldOfView.cs" />
     <Compile Include="Assets\Scripts\Debugger.cs" />
     <Compile Include="Assets\Scripts\Behaviors\RespawnBehavior.cs" />
+    <Compile Include="Assets\Scripts\Player\HumanoidProceduralAnimation-main\HumanoidProceduralAnimation-main\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\Enemy\States\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\Damagable.cs" />
     <Compile Include="Assets\Scripts\Environment\HackingConsole.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Player\HumanoidProceduralAnimation-main\HumanoidProceduralAnimation-main\Scripts\ProceduralAnimation.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\BossDodgeState.cs" />
     <Compile Include="Assets\HackingManager.cs" />
     <Compile Include="Assets\Scripts\Player\AnimControlScript.cs" />
@@ -149,8 +152,6 @@
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
-    <Compile Include="Assets\Scripts\Player\HumanoidProceduralAnimation-main\HumanoidProceduralAnimation-main\Scripts\ProceduralAnimation.cs" />
-    <Compile Include="Assets\Scripts\Player\HumanoidProceduralAnimation-main\HumanoidProceduralAnimation-main\Scripts\Controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -8,7 +8,6 @@ namespace CommonComponents.Interfaces
 		public Vector3 FireDirection { get; set; }
 
         [SerializeField] protected WeaponsSetup weaponsSetup;
-
 		 protected ObjectCachePool<Projectile> PrimaryShotPool;
 		 protected ObjectCachePool<Projectile> SecondaryShotPool;
 

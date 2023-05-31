@@ -17,7 +17,7 @@ namespace Hacking
 		public float spawnTime;
 		public bool isTimeTrial;
 		[SerializeField] private TMP_Text hpText;
-		[SerializeField] private HackingMangaer mangager;
+		[SerializeField] private HackingManager mangager;
 
 		void Start()
 		{
