@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 5
-  explosion: {fileID: 8776428679239407099, guid: 26453316336f9614c9af9e93ad1ea65b,
+  explosion: {fileID: 8776428679239407099, guid: 37f22b4081cf98440b45f2d77b3ed19a,
     type: 3}
 --- !u!54 &-3131333685323197983
 Rigidbody:

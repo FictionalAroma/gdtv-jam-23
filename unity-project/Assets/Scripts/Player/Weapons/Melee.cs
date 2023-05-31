@@ -91,7 +91,7 @@ namespace Player.Weapons
 				playerAnimator.SetTrigger("isExplodingMelee");
 				//player.GetComponent<PlayerController>().jukeBox.PlayOneShot(secondaryMeleeSFX);
 				_secondaryAttackCheck.GetComponent<CapsuleCollider>().radius = setup.speed;
-				_secondaryAttackCheck.GetComponent<ParticleSystem>().Play();
+				//_secondaryAttackCheck.GetComponent<ParticleSystem>().Play();
 				Destroy(explosion, 1f);
 				StartCoroutine(SecondaryAttackCooldown());
 			}
@@ -113,9 +113,11 @@ namespace Player.Weapons
 		}
 
 		private IEnumerator SecondaryAttackCooldown()
-		{			
+		{
+			Debug.Log("SecondaryAttackCooldown Initiated");
 			yield return new WaitForSeconds(weaponsSetup.secondary.cooldown);
 			canSecondaryAttack = true;
+			Debug.Log(canSecondaryAttack);
 		}
 
 
