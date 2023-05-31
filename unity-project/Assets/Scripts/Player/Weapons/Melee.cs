@@ -64,27 +64,24 @@ namespace Player.Weapons
         public override void BeginSecondaryAttack(Vector3 fireDirection,bool holding)
 		{
 			
-			if (canSecondaryAttack == true)
+			if (canSecondaryAttack)
             {
 				playerAnimator.SetTrigger("isHoldingMelee");
 				playerAnimator.ResetTrigger("isExplodingMelee");
 				FireDirection = fireDirection;
 				holidingSecondary = true;
 				StartCoroutine(SmashingRepeater());
+				canSecondaryAttack = false;
 			}
-			else
-            {
-				return;
-            }
 			
 		}
 		public override void CancelSecondaryAttack(Vector3 lookDir)
 		{
 
-			holidingSecondary = false;
-			if (canSecondaryAttack)
+			if (holidingSecondary)
             {
-				canSecondaryAttack = false;
+				holidingSecondary = false;
+
 				StopCoroutine(SmashingRepeater());
 				var setup = weaponsSetup.secondary;
 				var _secondaryAttackCheck = GetNextBullet(setup, SecondaryShotPool);
@@ -96,14 +93,8 @@ namespace Player.Weapons
 				_secondaryAttackCheck.GetComponent<CapsuleCollider>().radius = setup.speed;
 				_secondaryAttackCheck.GetComponent<ParticleSystem>().Play();
 				Destroy(explosion, 1f);
-				
+				StartCoroutine(SecondaryAttackCooldown());
 			}
-			else
-            {
-				StopCoroutine(SmashingRepeater());
-            }
-			
-
 		}
 
 		private IEnumerator SmashingRepeater()
@@ -120,6 +111,13 @@ namespace Player.Weapons
 				yield return new WaitForEndOfFrame();
 			}
 		}
+
+		private IEnumerator SecondaryAttackCooldown()
+		{			
+			yield return new WaitForSeconds(weaponsSetup.secondary.cooldown);
+			canSecondaryAttack = true;
+		}
+
 
 	}
 }
