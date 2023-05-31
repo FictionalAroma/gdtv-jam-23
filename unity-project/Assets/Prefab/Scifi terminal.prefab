@@ -131,3 +131,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionText: 
   ItemName: 
+  hackingSceneDifficulty: 1

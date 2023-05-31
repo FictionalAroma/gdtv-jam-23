@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Environment;
+using Unity.VisualScripting;
 
 namespace Management
 {
@@ -16,15 +18,12 @@ namespace Management
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         }
 
-        public static void LoadHacking(HackingConsole hackingConsole)
+        public static void LoadHacking(HackingDifficulty difficulty)
         {
-            
-            hackingScene = hackingConsole.hackingSceneDifficulty;
+			hackingScene = $"Hacking {difficulty}";
+			GameStateManager.Instance.SetState(CommonComponents.Interfaces.GameState.Hacking);
+
             SceneManager.LoadScene(hackingScene,LoadSceneMode.Additive);
-            GameStateManager.Instance.SetState(CommonComponents.Interfaces.GameState.Hacking);
-            
-
-
         }
         public static void ExitHacking(bool playerWon)
         {

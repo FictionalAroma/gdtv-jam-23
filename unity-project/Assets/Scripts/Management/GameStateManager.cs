@@ -1,4 +1,5 @@
-﻿using CommonComponents.Interfaces;
+﻿using CommonComponents;
+using CommonComponents.Interfaces;
 
 namespace Management
 {
@@ -31,5 +32,6 @@ namespace Management
 		public void Subscribe(IGameStateSubscriber sub) => StateChangeEvent += sub.OnStateChange;
 
 
+		public void Unsubscribe(GameStateModifier sub) { StateChangeEvent -= sub.OnStateChange; }
 	}
 }

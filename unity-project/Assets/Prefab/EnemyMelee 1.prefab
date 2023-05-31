@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4666842827334825773}
   - component: {fileID: 2376200050670511674}
   - component: {fileID: 3877093156658734395}
+  - component: {fileID: 7194693317616515156}
   m_Layer: 7
   m_Name: EnemyMelee 1
   m_TagString: BigEnemies
@@ -227,6 +228,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   canSeePlayer: 0
+--- !u!114 &7194693317616515156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961897824972753298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0efce46666e1ae4b9a2dc421a0dccf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStateList: 00000000
 --- !u!1001 &6304790248849572614
 PrefabInstance:
   m_ObjectHideFlags: 0

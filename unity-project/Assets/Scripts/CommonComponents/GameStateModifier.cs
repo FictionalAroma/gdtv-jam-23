@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CommonComponents.Interfaces;
 using UnityEngine;
 
@@ -12,6 +13,11 @@ namespace CommonComponents
 		{
 			SingletonRepo.StateManager.Subscribe(this);
 			_behaviourList = GetComponents<MonoBehaviour>();
+		}
+
+		private void OnDestroy()
+		{
+			SingletonRepo.StateManager.Unsubscribe(this);
 		}
 
 		public void OnStateChange(GameState newState)

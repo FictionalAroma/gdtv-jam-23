@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7162894409600045163}
   - component: {fileID: 7162894409600045162}
   - component: {fileID: 7162894409600045165}
+  - component: {fileID: -6036958964452573169}
   m_Layer: 11
   m_Name: Laser Oscillator
   m_TagString: Untagged
@@ -110,8 +111,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad3e63360f25e04688682a3a8544a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 5, y: 0, z: 0}
+  movementVector: {x: 0, y: 0, z: 0}
   period: 2
   keys: []
   requireAllConditions: 0
   <Damage>k__BackingField: 0
+--- !u!114 &-6036958964452573169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162894409600045164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0efce46666e1ae4b9a2dc421a0dccf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStateList: 00000000
