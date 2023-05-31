@@ -253,11 +253,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HackingSystemWhole
       objectReference: {fileID: 0}
-    - target: {fileID: 2758584302115102951, guid: a696d4ed0df0c1f4dbb33a33985f8e15,
-        type: 3}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7040001833017884146, guid: a696d4ed0df0c1f4dbb33a33985f8e15,
         type: 3}
       propertyPath: m_RootOrder
