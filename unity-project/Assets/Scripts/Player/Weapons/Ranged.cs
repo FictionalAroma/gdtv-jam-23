@@ -14,6 +14,9 @@ namespace Player.Weapons
 		[SerializeField] bool canPrimaryAttack = true;
 		[SerializeField] bool canSecondaryAttack = true;
 		Player.PlayerController Player;
+
+		private bool playerIsAttacking;
+		private bool primaryAttackRunning;
 		//IInputInteraction interaction;
 		
 
@@ -22,19 +25,22 @@ namespace Player.Weapons
 		public override void BeginPrimaryAttack(Vector3 fireDirection)
 		{
 			Debug.Log("Start Firing");
-			FireDirection = fireDirection;
-			_firing = StartCoroutine(FiringRepeater());
+			playerIsAttacking = true;
+			if (!primaryAttackRunning)
+			{
+				StartCoroutine(FiringRepeater());
+			}
 		}
 
 		public override void CancelPrimaryAttack(Vector3 lookDir)
 		{
-			StopCoroutine(_firing);
-
+			playerIsAttacking = false;
 		}
 
 		private IEnumerator FiringRepeater()
 		{
-			while (true)
+			primaryAttackRunning = true;
+			while (playerIsAttacking)
 			{
 				if (canPrimaryAttack)
                 {
@@ -51,37 +57,47 @@ namespace Player.Weapons
 				}
 				
 			}
+			primaryAttackRunning = false;
+
 		}
 
+
+		private bool chargingGrenade = false;
+		private bool canThrowNext = true;
 		public override void BeginSecondaryAttack(Vector3 fireDirection, bool interaction )
 		{
 			
-			
 			FireDirection = fireDirection;
-			_throwing = StartCoroutine(ThrowingGrenade(interaction));
-			
+			if (canThrowNext)
+			{
+				canThrowNext = false;
+
+				chargingGrenade = true;
+				_throwing = StartCoroutine(ThrowingGrenade());
+			}
+
 		}
-		private IEnumerator ThrowingGrenade(bool holding)
+		private IEnumerator ThrowingGrenade()
         {
 			var setup = weaponsSetup.secondary;
 
-			while (holding)
+			while (chargingGrenade)
 			{
 				throwingPower += Time.deltaTime * setup.speed;
 				yield return new WaitForEndOfFrame();
 			}
 
-            Mathf.Clamp(throwingPower, weaponsSetup.primary.timeToLive, setup.timeToLive);
-			CancelSecondaryAttack(FireDirection);
+			throwingPower = Mathf.Clamp(throwingPower, weaponsSetup.primary.timeToLive, setup.timeToLive);
         }
 		public override void CancelSecondaryAttack(Vector3 lookDir)
 		{
+			chargingGrenade = false;
 			StopCoroutine(_throwing);
 			var setup = weaponsSetup.secondary;
 
 			var grenade = GetNextBullet(setup, SecondaryShotPool);
 			Vector3 targetPosition = transform.position + transform.up * throwingPower;
-			grenade.Initialize(grenade.transform.position, setup.speed, setup.speed, setup.damage);
+			grenade.Initialize(grenade.transform.position, setup.speed * throwingPower, setup.speed, setup.damage);
 			Rigidbody grenadeRigidbody = grenade.GetComponent<Rigidbody>();
 			
 			grenadeRigidbody.velocity = CalculateThrowVelocity(grenade.transform.position, targetPosition, 1.5f); // Adjust the multiplier as desired
@@ -106,6 +122,7 @@ namespace Player.Weapons
         {			
 			throwingPower = weaponsSetup.primary.timeToLive;
 			yield return new WaitForSeconds(weaponsSetup.secondary.cooldown);
-        }
+			canThrowNext = true;
+		}
     }
 }
