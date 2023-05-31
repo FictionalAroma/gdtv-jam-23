@@ -45,11 +45,11 @@ namespace UI
 
         public void SetSliderValue(float amountChanged,float value)
         {
-			HPslider.value = value;
+			if(HPslider != null) HPslider.value = value;
 		}
         public void SetTextValue(string state)
         {
-            _stateText.text = state;
+            if(_stateText != null) _stateText.text = state;
         }
         /*public void SetValue(float amountChanged, float newValue, string state)
 		{
