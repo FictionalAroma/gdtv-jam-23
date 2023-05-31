@@ -32,8 +32,9 @@ namespace CommonComponents
         private IEnumerator Explode()
         {
 			isCoroutineStarted = true;
-			Instantiate(explosion,this.transform.position,Quaternion.identity);
-			yield return new WaitForSeconds(0.3f);
+			var explosionSFX = Instantiate(explosion,this.transform.position,Quaternion.identity);
+			Destroy(explosionSFX, 1);
+			yield return new WaitForSeconds(1);
 			EndBullet();
         }
 

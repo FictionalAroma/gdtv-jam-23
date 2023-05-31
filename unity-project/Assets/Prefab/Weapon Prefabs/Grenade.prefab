@@ -111,10 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470e62d9dc0e29143a849de720be88bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
-  _timeToLive: 1
   <Damage>k__BackingField: 5
-  explosion: {fileID: 7579317563433758575, guid: c1c55f978ae93ef41893f74abbfc16d5,
+  explosion: {fileID: 8776428679239407099, guid: 26453316336f9614c9af9e93ad1ea65b,
     type: 3}
 --- !u!54 &-3131333685323197983
 Rigidbody:
