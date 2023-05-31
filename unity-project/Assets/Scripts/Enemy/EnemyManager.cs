@@ -28,13 +28,16 @@ namespace Enemy
 			_hpBar = GetComponent<UIDisplay>();
 			HPChangedEvent += _hpBar.SetSliderValue;
 			HPEmpty += OnDeath;
-			
+
 			_mover = GetComponent<EnemyMover>();
 
 		}
 
 		private void Start()
 		{
+			_hpBar.MaxValue = MaxHP;
+			_hpBar.SetToMax();
+
 			DamageTaken += _stateMachine.DamageTaken;
 			_stateMachine.AddState(new EnemyIdleState(gameObject));
 			_stateMachine.AddState(new EnemyAttackState(gameObject));

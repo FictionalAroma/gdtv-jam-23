@@ -31,6 +31,7 @@ namespace UI
 		{
 			if (HPslider != null)
 			{
+				HPslider.maxValue = MaxValue;
 				HPslider.value = this.MaxValue;
 			}
 
