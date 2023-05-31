@@ -1,18 +1,22 @@
 ﻿using System;
 using CommonComponents;
 using CommonComponents.Interfaces;
+using Management;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Environment
 {
 	public class HackingConsole : Interactable
 	{
 		public bool ActiveState { get; set; }
-
+		
 		private event Action OnActivate;
-
+		public string hackingSceneDifficulty;
 		public override void Action(InteractableActor actor)
 		{
 			ActiveState = true;
+			LevelLoader.LoadHacking(this);
 			OnActivate?.Invoke();
 		}
 

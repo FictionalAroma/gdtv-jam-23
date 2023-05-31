@@ -7,20 +7,28 @@ namespace Management
     public class LevelLoader
     {
         public int _currentSceneIndex;
-        public int _currentActiveScene;
-        public static Scene hackingScene;
-
+        public string _currentActiveScene;
+        public static string hackingScene;
+        GameStateManager gameStateManager;
        
         private void OnLevelStart()
         {
-            hackingScene = SceneManager.GetSceneByName("HackingScene");
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         }
 
         public static void LoadHacking(HackingConsole hackingConsole)
         {
-            SceneManager.LoadScene(hackingScene.name, LoadSceneMode.Additive);
-           
+            
+            hackingScene = hackingConsole.hackingSceneDifficulty;
+            SceneManager.LoadScene(hackingScene,LoadSceneMode.Additive);
+            GameStateManager.Instance.SetState(CommonComponents.Interfaces.GameState.Hacking);
+            
+
+
+        }
+        public static void ExitHacking(bool playerWon)
+        {
+
         }
        
         internal static void ExitGame()
@@ -38,14 +46,26 @@ namespace Management
         }
         public void LoadNextScene()
         {
-            _currentActiveScene = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(_currentActiveScene++);
-            OnLevelStart();
+
+            _currentActiveScene = SceneManager.GetActiveScene().name;
+            if (_currentActiveScene == "Level 1")
+            {
+                SceneManager.LoadScene("Level 2");
+            }
+            if (_currentActiveScene == "Level 2")
+            {
+                SceneManager.LoadScene("Level 2");
+            }
+            if (_currentActiveScene == "Level 3")
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+            
         }
         public void RestartScene()
         {
-            _currentActiveScene = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(_currentSceneIndex);
+            _currentActiveScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(_currentActiveScene);
         }
 
     }
