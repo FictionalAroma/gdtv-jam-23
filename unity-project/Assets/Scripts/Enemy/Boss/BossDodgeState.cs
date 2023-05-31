@@ -1,5 +1,4 @@
-﻿using Enemy.States;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemy.Boss
 {

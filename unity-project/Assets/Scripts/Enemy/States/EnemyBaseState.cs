@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using CommonComponents.StateMachine;
-using Helpers;
-using Player;
 using UnityEngine;
 
 namespace Enemy.States

@@ -1,5 +1,4 @@
 ﻿using CommonComponents.StateMachine;
-using Enemy.States;
 
 namespace Enemy.Boss
 {

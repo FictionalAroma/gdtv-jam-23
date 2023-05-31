@@ -2,8 +2,6 @@
 using CommonComponents;
 using CommonComponents.Interfaces;
 using Management;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Environment
 {

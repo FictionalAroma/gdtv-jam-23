@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using CommonComponents.StateMachine;
+﻿using CommonComponents.StateMachine;
 using UnityEngine;
 
 namespace Enemy.Boss
