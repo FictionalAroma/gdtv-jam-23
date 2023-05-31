@@ -27,7 +27,9 @@ namespace Hacking
 
 		private void OnDead(Damagable obj)
 		{
-			Destroy(gameObject);
+			Destroy(gameObject, 0.2f);
+			GetComponent<SpriteRenderer>().enabled = false;
+			GetComponent<Collider2D>().enabled = false;
 		}
 
 		// Update is called once per frame

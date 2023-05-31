@@ -1,5 +1,6 @@
 using CommonComponents;
 using Hacking.Player;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,6 +18,7 @@ public class HackingManager : MonoBehaviour
 	float timeTrialTimer;
 	float timeTrialTime;
 	HackingPlayerController hackingPlayerController;
+	[SerializeField] private TMP_Text toKillText;
 
 	public void Start()
 	{
@@ -54,28 +56,31 @@ public class HackingManager : MonoBehaviour
                 }
 
         }
-			
+
+		toKillText.text = numberToKill.ToString();
+
 
 	}
     private void Update()
-    {
+	{
+		timeTrialTimer -= Time.deltaTime;
         if (isTimeTrial&& hackingMode != HackingMode.Hard)
         {
-			if (timeTrialTimer ==0)
+			if (timeTrialTimer <=0)
             {
 				PlayerWin(hackingPlayerController);
             }
         }
 		else if (!isTimeTrial && hackingMode!= HackingMode.Hard)
         {
-			if (numberToKill == 0)
+			if (numberToKill <= 0)
             {
 				PlayerWin(hackingPlayerController);
             }
         }
 		else if (hackingMode == HackingMode.Hard)
         {
-			if (timeTrialTimer ==0 && numberToKill ==0)
+			if (timeTrialTimer <=0 && numberToKill <=0)
             {
 				PlayerWin(hackingPlayerController);
             }
@@ -86,6 +91,12 @@ public class HackingManager : MonoBehaviour
         }
 		
     }
+
+	public void EnemyDead(Damagable damagable)
+	{
+		numberToKill--;
+		toKillText.text = numberToKill.ToString("0");
+	}
 
 
     public void PlayerWin(Damagable obj)

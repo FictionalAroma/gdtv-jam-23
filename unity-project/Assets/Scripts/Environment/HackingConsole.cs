@@ -23,14 +23,22 @@ namespace Environment
 		public HackingDifficulty hackingSceneDifficulty = HackingDifficulty.Easy;
 		public override void Action(InteractableActor actor)
 		{
-			ActiveState = true;
 			if (hackingSceneDifficulty != HackingDifficulty.None)
 			{
-				LevelLoader.LoadHacking(hackingSceneDifficulty);
-
+				LevelLoader.LoadHacking(this);
+			}
+			else
+			{
+				TurnOnConsole();
 			}
 
+		}
+
+		public void TurnOnConsole()
+		{
+			ActiveState = true;
 			OnActivate?.Invoke();
+
 		}
 
 		public void Subscribe(Action act) => OnActivate += act;

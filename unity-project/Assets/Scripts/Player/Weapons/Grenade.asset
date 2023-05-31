@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Grenade
   m_EditorClassIdentifier: 
   damage: 10
-  range: 5
+  timeToLive: 5
   speed: 1.5
-  cooldown: 1
+  cooldown: 5
   projectile: {fileID: 2749955979786975264, guid: c755083f3bb8487479dd80dc6e5f4838,
     type: 3}

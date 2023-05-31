@@ -12,23 +12,31 @@ namespace Management
         public string _currentActiveScene;
         public static string hackingScene;
         GameStateManager gameStateManager;
-       
+		private static HackingConsole consoleCache;
         private void OnLevelStart()
         {
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         }
 
-        public static void LoadHacking(HackingDifficulty difficulty)
-        {
-			hackingScene = $"Hacking {difficulty}";
+        public static void LoadHacking(HackingConsole console)
+		{
+			consoleCache = console;
+			hackingScene = $"Hacking {console.hackingSceneDifficulty}";
 			GameStateManager.Instance.SetState(CommonComponents.Interfaces.GameState.Hacking);
 
             SceneManager.LoadScene(hackingScene,LoadSceneMode.Additive);
         }
         public static void ExitHacking(bool playerWon)
-        {
-
-        }
+		{
+			if (playerWon)
+			{
+                consoleCache.TurnOnConsole();
+			}
+			else
+			{
+				SingletonRepo.PlayerObject.CurrentHP -= 10;
+			}
+		}
        
         internal static void ExitGame()
         {

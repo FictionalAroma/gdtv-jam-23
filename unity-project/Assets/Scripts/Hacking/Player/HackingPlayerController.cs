@@ -63,12 +63,9 @@ namespace Hacking.Player
 		private PlayerInput _controls;
 		private InputAction _moveAction;
 		private InputAction _lookAction;
-		private InputAction _dodgeAction;
-		private InputAction _swapWeaponsAction;
 		private InputAction _secondaryAction;
-		private InputAction _activateAction;
+		[SerializeField] private Camera hackingCamera;
 
-		
 		#endregion
 		private void CacheControls()
 		{
@@ -77,21 +74,15 @@ namespace Hacking.Player
 			_moveAction = _controls.Player.Move;
 			_lookAction = _controls.Player.Look;
 			_primaryAction = _controls.Player.Primary;
-			_dodgeAction = _controls.Player.Dodge;
 			_secondaryAction = _controls.Player.Secondary;
-			_swapWeaponsAction = _controls.Player.SwapWeapon;
-			_activateAction = _controls.Player.Action;
 
 		
-			_dodgeAction.performed += OnDodge;
 			_moveAction.performed += OnMove;
 			_lookAction.performed += OnLook;
 			_primaryAction.started += OnPrimary;
 			_primaryAction.canceled += OnPrimaryCancel;
 			_secondaryAction.started += OnSecondary;
 			_secondaryAction.canceled += OnSecondaryCancel;
-			_swapWeaponsAction.started += OnSwapWeapon;
-			_activateAction.performed += OnAction;
 		}
 
 		private void OnPrimaryCancel(InputAction.CallbackContext obj)
@@ -101,7 +92,7 @@ namespace Hacking.Player
 
 		private void OnSecondaryCancel(InputAction.CallbackContext obj)
 		{
-			throw new NotImplementedException();
+			Debug.Log("secondary");
 		}
 
 		private void OnEnable()
@@ -112,7 +103,7 @@ namespace Hacking.Player
 
 		private void OnDisable()
 		{
-			EnableControls();
+			DisableControls();
 		
 		}
 		private void EnableControls()
@@ -147,9 +138,10 @@ namespace Hacking.Player
 		}
 		private void UpdateLookDir()
 		{
-			lookDir = Camera.main.ScreenToWorldPoint(_currentLookPosition) - transform.position;
+			var screenToWorldPoint = hackingCamera.ScreenToWorldPoint(_currentLookPosition);
+			lookDir = screenToWorldPoint - transform.position;
 			//Debug.Log(lookAngle);
-			playerAimTarget.transform.position = Camera.main.ScreenToWorldPoint(_currentLookPosition);
+			playerAimTarget.transform.position = screenToWorldPoint;
 			float lookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
 
 			transform.rotation = Quaternion.AngleAxis(lookAngle, Vector3.forward);
