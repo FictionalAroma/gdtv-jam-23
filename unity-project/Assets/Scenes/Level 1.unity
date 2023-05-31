@@ -5142,6 +5142,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scifi terminal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781461817368438497, guid: a85a322e1f451e242b9072b861b66267,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ba2a757b0a57f64cb29823012e35c49, type: 2}
+    - target: {fileID: 5781461817368438497, guid: a85a322e1f451e242b9072b861b66267,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ceb8ab5c1991f964899e4a740cf61f2c, type: 2}
+    - target: {fileID: 5781461817368438497, guid: a85a322e1f451e242b9072b861b66267,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81a8658860feedb4191f2faa11f327db, type: 2}
+    - target: {fileID: 5781461817368438497, guid: a85a322e1f451e242b9072b861b66267,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: fefa7bc55fbe9314dac5620b99bb958f, type: 2}
+    - target: {fileID: 5781461817368438497, guid: a85a322e1f451e242b9072b861b66267,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 308258303b9284c4393e298f1341c966, type: 2}
+    - target: {fileID: 5781461817368438497, guid: a85a322e1f451e242b9072b861b66267,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: ed8fc519351fee244b8fd9c36efb58fb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85a322e1f451e242b9072b861b66267, type: 3}
 --- !u!4 &1000828133 stripped

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1268873799}
   - component: {fileID: 1268873795}
   - component: {fileID: 1268873796}
+  - component: {fileID: 7968986980298860425}
   m_Layer: 16
   m_Name: HackingPlayerShip
   m_TagString: Untagged
@@ -233,8 +234,11 @@ MonoBehaviour:
   <MaxHP>k__BackingField: 50
   <CurrentHP>k__BackingField: 50
   _currentLookPosition: {x: 0, y: 0}
+  hpText: {fileID: 0}
+  manager: {fileID: 0}
   hackingBullet: {fileID: 2315642870638069063, guid: 7f8bd30a13a456f4aa2e6d5e8ae003ae,
     type: 3}
+  hackingGrenade: {fileID: 0}
   moveSpeed: 25
   gravityValue: 0
   _dodgePower: 0
@@ -245,3 +249,16 @@ MonoBehaviour:
   dodgeDuration: 0
   playerAimTarget: {fileID: 0}
   playerMoveTarget: {fileID: 0}
+--- !u!114 &7968986980298860425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833468059982212596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0efce46666e1ae4b9a2dc421a0dccf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStateList: 00000000

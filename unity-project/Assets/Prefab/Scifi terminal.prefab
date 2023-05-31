@@ -64,12 +64,12 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3404087113500141571, guid: 91e9aac28e26bc940bc9e15cf7083852, type: 3}
-  - {fileID: 133737723422672514, guid: 91e9aac28e26bc940bc9e15cf7083852, type: 3}
-  - {fileID: 7703209862111268928, guid: 91e9aac28e26bc940bc9e15cf7083852, type: 3}
-  - {fileID: -101008209113779210, guid: 91e9aac28e26bc940bc9e15cf7083852, type: 3}
-  - {fileID: -7432060488156261581, guid: 91e9aac28e26bc940bc9e15cf7083852, type: 3}
-  - {fileID: 185765315834794233, guid: 91e9aac28e26bc940bc9e15cf7083852, type: 3}
+  - {fileID: 2100000, guid: 628b3eb8653f2424e8bdf5844e605616, type: 2}
+  - {fileID: 2100000, guid: b86a41085cfa68c4d96f250e16d6ca6b, type: 2}
+  - {fileID: 2100000, guid: ba72c96166c8f964e8bfefcb003e72cf, type: 2}
+  - {fileID: 2100000, guid: b237873d8442fa14e93275dc56cc9ba9, type: 2}
+  - {fileID: 2100000, guid: 0e67f5246c0e78644813167a90972539, type: 2}
+  - {fileID: 2100000, guid: 80c429c9abfdc6e41b01fdf63f6d5437, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

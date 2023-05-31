@@ -42,6 +42,7 @@ namespace Hacking.Player
 
 			base.Awake();
 			CacheControls();
+			EnableControls();
 
 		
 			//var hpSlider = PlayerUIManager.Instance.PlayerHPSlider;
@@ -67,9 +68,7 @@ namespace Hacking.Player
 		private InputAction _secondaryAction;
 		private InputAction _activateAction;
 
-		public HackingPlayerController()
-		{
-		}
+		
 		#endregion
 		private void CacheControls()
 		{
