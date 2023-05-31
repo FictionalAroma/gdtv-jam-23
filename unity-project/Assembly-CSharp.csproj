@@ -94,7 +94,7 @@
     <Compile Include="Assets\Scripts\Environment\HackingConsole.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenuManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\BossDodgeState.cs" />
-    <Compile Include="Assets\HackingMangaer.cs" />
+    <Compile Include="Assets\HackingManager.cs" />
     <Compile Include="Assets\Scripts\Player\AnimControlScript.cs" />
     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
     <Compile Include="Assets\Scripts\CommonComponents\HandCannon.cs" />
