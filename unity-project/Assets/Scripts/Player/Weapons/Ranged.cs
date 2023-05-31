@@ -84,6 +84,8 @@ namespace Player.Weapons
 
 			while (chargingGrenade)
 			{
+				playerAnimator.SetTrigger("isHolding");
+				playerAnimator.ResetTrigger("isThrowing");
 				throwingPower += Time.deltaTime * setup.speed;
 				yield return new WaitForEndOfFrame();
 			}
@@ -100,7 +102,8 @@ namespace Player.Weapons
 			Vector3 targetPosition = transform.position + transform.up * throwingPower;
 			grenade.Initialize(grenade.transform.position, setup.speed * throwingPower, setup.speed, setup.damage);
 			Rigidbody grenadeRigidbody = grenade.GetComponent<Rigidbody>();
-			
+			playerAnimator.ResetTrigger("isHolding");
+			playerAnimator.SetTrigger("isThrowing");
 			grenadeRigidbody.velocity = CalculateThrowVelocity(grenade.transform.position, targetPosition, 1.5f); // Adjust the multiplier as desired
 
 			StartCoroutine(SecondaryAttackCooldown());

@@ -59,19 +59,32 @@ namespace Player.Weapons
 
 		private bool holidingSecondary;
 		private float holdTimer;
-		public override void BeginSecondaryAttack(Vector3 fireDirection,bool holding)
+        private bool canSecondaryAttack;
+
+        public override void BeginSecondaryAttack(Vector3 fireDirection,bool holding)
 		{
-			Debug.Log("Start Smashing");
-			FireDirection = fireDirection;
-			holidingSecondary = true;
-			StartCoroutine(SmashingRepeater());
+			
+			if (canSecondaryAttack)
+            {
+				canSecondaryAttack = false;
+				playerAnimator.SetTrigger("isHoldingMelee");
+				playerAnimator.ResetTrigger("isExplodingMelee");
+				FireDirection = fireDirection;
+				holidingSecondary = true;
+				StartCoroutine(SmashingRepeater());
+			}
+			
 		}
 		public override void CancelSecondaryAttack(Vector3 lookDir)
 		{
+
+			holidingSecondary = false;
 			StopCoroutine(_smashing);
 			var setup = weaponsSetup.secondary;
 			var _secondaryAttackCheck = GetNextBullet(setup, SecondaryShotPool);
 			_secondaryAttackCheck.Initialize(transform.position + transform.forward, 0, setup.timeToLive, setup.damage);
+			playerAnimator.ResetTrigger("isHoldingMelee");
+			playerAnimator.SetTrigger("isExplodingMelee");
 			player.GetComponent<PlayerController>().jukeBox.PlayOneShot(secondaryMeleeSFX);
 			_secondaryAttackCheck.GetComponent<SphereCollider>().radius = setup.timeToLive;
 			_secondaryAttackCheck.GetComponent<ParticleSystem>().Play();

@@ -49,7 +49,7 @@ namespace Player
         public void OnPrimary(InputAction.CallbackContext context)
         {
             
-            if (playerController._currentWeapon == playerController.weapons[0])
+            /*if (playerController._currentWeapon == playerController.weapons[0])
             {
                 playerAnimator.SetTrigger("primaryRangedShot");
                 
@@ -66,7 +66,7 @@ namespace Player
                 playerAnimator.SetInteger("primaryMeleePunchVaration", Random.Range(1, 3));
                 playerAnimator.SetTrigger("primaryMeleePunch");
                 
-            }
+            }*/
         }
 
         public void OnSecondary(InputAction.CallbackContext context)
@@ -102,15 +102,15 @@ namespace Player
 
 		public void OnPrimaryCancel(InputAction.CallbackContext obj)
 		{
-			playerAnimator.ResetTrigger(playerController._currentWeapon == playerController.weapons[0]
+			/*playerAnimator.ResetTrigger(playerController._currentWeapon == playerController.weapons[0]
 											? "primaryRangedShot"
 											: "primaryMeleePunch");
             playerAnimator.SetBool("isShooting", false);
-            playerAnimator.SetBool("isPunching", false);
+            playerAnimator.SetBool("isPunching", false);*/
 		}
         public void OnSecondaryCancel(InputAction.CallbackContext obj)
         {
-            if (playerController._currentWeapon == playerController.weapons[0])
+           /* if (playerController._currentWeapon == playerController.weapons[0])
             {
                 playerAnimator.ResetTrigger("isHolding");
                 playerAnimator.SetTrigger("isThrowing");
@@ -121,6 +121,7 @@ namespace Player
                 playerAnimator.SetTrigger("isExplodingMelee");
                 
             }
+           */
         }
         
 

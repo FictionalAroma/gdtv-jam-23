@@ -33,7 +33,7 @@ namespace CommonComponents
         {
 			isCoroutineStarted = true;
 			Instantiate(explosion,this.transform.position,Quaternion.identity);
-			yield return new WaitForSeconds(_speed);
+			yield return new WaitForSeconds(0.3f);
 			EndBullet();
         }
 

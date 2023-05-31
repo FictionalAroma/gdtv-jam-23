@@ -5493,8 +5493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponsSetup: {fileID: 11400000, guid: a05e7b241fe125141b89cfef38f59e98, type: 2}
   throwingPower: 0
-  primaryRangedSFX: {fileID: 0}
-  secondaryRangedSFX: {fileID: 0}
+  primaryRangedSFX: {fileID: 8300000, guid: 59e4e0324b0858148a39526c595258a9, type: 3}
+  secondaryRangedSFX: {fileID: 8300000, guid: 9785d04b0ebf5d64d832bca06fe74d10, type: 3}
   canPrimaryAttack: 1
   canSecondaryAttack: 1
   playerAnimator: {fileID: 8433196679690666548}
