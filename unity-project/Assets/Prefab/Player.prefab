@@ -5182,6 +5182,8 @@ MonoBehaviour:
   player: {fileID: 0}
   primaryMeleeSFX: {fileID: 0}
   secondaryMeleeSFX: {fileID: 0}
+  canPrimaryAttack: 1
+  playerAnimator: {fileID: 8433196679690666548}
 --- !u!1 &2621708627619808623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,6 +5495,9 @@ MonoBehaviour:
   throwingPower: 0
   primaryRangedSFX: {fileID: 0}
   secondaryRangedSFX: {fileID: 0}
+  canPrimaryAttack: 1
+  canSecondaryAttack: 1
+  playerAnimator: {fileID: 8433196679690666548}
 --- !u!1001 &2621708626686377893
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ namespace Player.Weapons
 					var primaryAttackCheck = GetNextBullet(setup, PrimaryShotPool);
 					primaryAttackCheck.Initialize(transform.position + transform.forward, 0, setup.speed, setup.damage);
 					player.GetComponent<PlayerController>().jukeBox.PlayOneShot(primaryMeleeSFX);
-					player.GetComponent<Animator>().SetInteger("primaryMeleePunchVaration", Random.Range(1, 3));
+					playerAnimator.SetInteger("primaryMeleePunchVaration", Random.Range(1, 3));
 					player.GetComponent<Animator>().SetTrigger("primaryMeleePunch");
 					primaryAttackCheck.GetComponent<SphereCollider>().radius = setup.timeToLive;
 					yield return new WaitForSeconds(setup.cooldown);
