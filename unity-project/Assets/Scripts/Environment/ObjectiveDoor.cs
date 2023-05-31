@@ -22,20 +22,39 @@ namespace Environment
 
         private void Start()
 		{
-			foreach (var interactable in keys)
+			if (keys != null)
 			{
-				interactable.Subscribe(OnKeyChange);
+				for(int index = keys.Count -1; index >= 0; index--)
+				{
+					var interactable = keys[index];
+					if (interactable != null)
+					{
+						interactable.Subscribe(OnKeyChange);
+					}
+					else
+					{
+						keys.RemoveAt(index);
+					}
+				}
 			}
 
 			if (keyEnemies != null)
 			{
-				foreach (var enemy in keyEnemies)
+				for(int index = keyEnemies.Count -1; index >= 0; index--)
 				{
-					enemy.HPEmpty += OnKeyChange;
+					var interactable = keyEnemies[index];
+					if (interactable != null)
+					{
+						interactable.HPEmpty += OnKeyChange;
+					}
+					else
+					{
+						keyEnemies.RemoveAt(index);
+					}
 				}
+
 			}
 
-			startNumEnemies = keyEnemies.Count;
 		}
 
 		private void OnKeyChange()
