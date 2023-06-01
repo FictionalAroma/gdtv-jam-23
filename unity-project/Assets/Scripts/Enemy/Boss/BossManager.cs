@@ -31,7 +31,7 @@ namespace Enemy.Boss
 		{
 			
 			isAlreadyStarted = false;
-			startEncounter = false;
+			//startEncounter = false;
 			_colliderCache = GetComponents<Collider>();
 			base.Awake();
 
@@ -50,6 +50,7 @@ namespace Enemy.Boss
 			DamageTaken += _stateMachine.DamageTaken;
 			_stateMachine.AddState(new BossIdleState(gameObject));
 			_stateMachine.AddState(new BossAlertState(gameObject));
+			_stateMachine.AddState(new BossAttackState(gameObject));
 			_stateMachine.AddState(new BossDeadState(gameObject));
 
 			foreach (var rechargePoint in rechargePoints)
@@ -74,7 +75,7 @@ namespace Enemy.Boss
 
 		public void Startup()
 		{
-			_stateMachine.TrySwapState(BossState.Intro);
+			_stateMachine.TrySwapState(BossState.Attack);
 
 		}
 		

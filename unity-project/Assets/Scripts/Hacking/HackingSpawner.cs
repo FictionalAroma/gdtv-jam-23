@@ -27,7 +27,7 @@ namespace Hacking
 		{
 			if (spawnTimer <=0)
 			{
-				var enemy = Instantiate(thingsToSpawn[Random.Range(0, thingsToSpawn.Length)], new Vector3(Random.Range(spawnPosMinX, spawnPosMaxX), Random.Range(spawnPosMinY, spawnPosMaxY), 0), Quaternion.identity);
+				var enemy = Instantiate(thingsToSpawn[Random.Range(0, thingsToSpawn.Length)], new Vector3(Random.Range(spawnPosMinX, spawnPosMaxX), Random.Range(spawnPosMinY, spawnPosMaxY), 0), Quaternion.identity, mangager.transform);
 				if (enemy.TryGetComponent<HackingEnemyController>(out var con))
 				{
 					con.HPEmpty += mangager.EnemyDead;

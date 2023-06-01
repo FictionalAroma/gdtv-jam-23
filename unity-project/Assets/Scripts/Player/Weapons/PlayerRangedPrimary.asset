@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b28b1895f803a408955e33f1eb78bb, type: 3}
   m_Name: PlayerRangedPrimary
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   timeToLive: 2
   speed: 20
-  cooldown: 0.3
+  cooldown: 0.2
   projectile: {fileID: -3172093380479723194, guid: 2e2a2be913bdd204fa95084f901963f2,
     type: 3}

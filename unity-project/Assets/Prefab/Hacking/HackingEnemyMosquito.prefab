@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2090255467}
   - component: {fileID: 2090255466}
   - component: {fileID: 2090255468}
+  - component: {fileID: 4743479437533789661}
   m_Layer: 17
   m_Name: HackingEnemyMosquito
   m_TagString: Untagged
@@ -155,3 +156,16 @@ MonoBehaviour:
   searchTime: 0.5
   hackingBullet: {fileID: 2315642870638069063, guid: 9fa4d24596f5190408f3b09f9ce95c54,
     type: 3}
+--- !u!114 &4743479437533789661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900625293691186225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0efce46666e1ae4b9a2dc421a0dccf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStateList: 02000000

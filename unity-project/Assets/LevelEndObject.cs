@@ -6,14 +6,13 @@ public class LevelEndObject : MonoBehaviour
 {
     [SerializeField] ObjectiveDoor finalDoor;
     Collider _levelEndObjectCollider;
-    LevelLoader levelLoader;
     private void Awake()
     {
         
         _levelEndObjectCollider = GetComponent<Collider>();
         _levelEndObjectCollider.enabled = false;
     }
-    private void Update()
+    private void Start()
     {
         finalDoor.OnOpen += FinalDoorOpen;
     }
@@ -26,7 +25,16 @@ public class LevelEndObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            levelLoader.LoadNextScene();
+            LevelLoader.LoadNextScene();
         }
     }
+	private void OnCollisionEnter(Collision other)
+	{
+
+		if (other.gameObject.CompareTag("Player"))
+		{
+			LevelLoader.LoadNextScene();
+		}
+	}
+
 }

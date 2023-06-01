@@ -35,14 +35,39 @@ namespace Enemy
 			trapEnabled = false;
 			isActivated = false;
 			trapCooldownTimer = trapCooldownTime;
-			foreach (var interactable in keys)
+			if (keys != null)
 			{
-				interactable.Subscribe(OnKeyChange);
+				for(int index = keys.Count -1; index >= 0; index--)
+				{
+					var interactable = keys[index];
+					if (interactable != null)
+					{
+						interactable.Subscribe(OnKeyChange);
+					}
+					else
+					{
+						keys.RemoveAt(index);
+					}
+				}
 			}
 
-			foreach (var enemy in keyEnemies)
+			if (keyEnemies != null)
 			{
-				enemy.HPEmpty += OnKeyChange;
+				for(int index = keyEnemies.Count -1; index >= 0; index--)
+				{
+					var interactable = keyEnemies[index];
+					if (interactable != null)
+					{
+						interactable.HPEmpty += OnKeyChange;
+					}
+					else
+					{
+						keyEnemies.RemoveAt(index);
+					}
+				}
+
+				startNumEnemies = keyEnemies.Count;
+
 			}
 
 			startNumEnemies = keyEnemies.Count;

@@ -17,8 +17,7 @@ namespace Enemy.States
 
 		public override void Activate()
 		{
-			
-			Context.Attacker.Target = null;
+			if (Context != null && Context.Attacker != null) Context.Attacker.Target = null;
 		}
 
 		public override void Deactivate() {}

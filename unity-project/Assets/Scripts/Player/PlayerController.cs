@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
@@ -30,7 +31,7 @@ namespace Player
 		[SerializeField] private float moveSpeed;
 		[SerializeField] private float gravityValue;
 		Vector3 mouseToGroundPoint;
-		private Camera _camera;
+		[SerializeField] private Camera _camera;
 		private Vector3 _lookDir;
 		private InputAction _primaryAction;
 		[SerializeField] private float _dodgePower;
@@ -48,7 +49,6 @@ namespace Player
 		{
 			AnimControlScript = GetComponent<AnimControlScript>();
 			SingletonRepo.PlayerObject = this;
-			_camera = Camera.main;
 			_characterController = GetComponent<CharacterController>();
 			jukeBox = FindObjectOfType<Jukebox>();
 
@@ -66,7 +66,6 @@ namespace Player
 			_currentWeapon = weapons[0];
 			pauseMenuManager = PauseMenuManager.Instance;
 		}
-
 
 		#region InputSetup
         private PlayerInput _controls;
@@ -193,19 +192,21 @@ namespace Player
 
 			//transform.rotation = Quaternion.AngleAxis(lookAngle, Vector3.up);
 			var mouseRay = _camera.ScreenPointToRay(new Vector3(_currentLookPosition.x, _currentLookPosition.y, 50));
+
 			if (Physics.Raycast(mouseRay, out var mouseRayHit, Mathf.Infinity, LayerMask.GetMask("Terrain")))
 			{
 				mouseToGroundPoint = mouseRayHit.point;
 				playerAimTarget.transform.position = new Vector3(mouseToGroundPoint.x,this.transform.position.y,mouseToGroundPoint.z);
 				var dir = transform.position - mouseToGroundPoint;
 				dir.y = 0;
-				_lookDir = -dir;
+				_lookDir = -dir.normalized;
 
 				transform.forward = _lookDir;
 
 				_currentWeapon.FireDirection = _lookDir;
 
 			}
+
 		}
 
 		public void OnSwapWeapon(InputAction.CallbackContext context)

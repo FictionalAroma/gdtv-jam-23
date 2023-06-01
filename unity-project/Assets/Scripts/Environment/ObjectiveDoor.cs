@@ -22,6 +22,7 @@ namespace Environment
 
         private void Start()
 		{
+			_locked = true;
 			if (keys != null)
 			{
 				for(int index = keys.Count -1; index >= 0; index--)

@@ -1257,7 +1257,7 @@ PrefabInstance:
     - target: {fileID: 1568417865273346468, guid: 038465fad7564ae4d8ac4ca902be9857,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1568417865273346520, guid: 038465fad7564ae4d8ac4ca902be9857,
         type: 3}
@@ -1418,7 +1418,7 @@ PrefabInstance:
     - target: {fileID: -5065791069272090490, guid: 9f7cd52d1d2179c44b94f96fdea36b09,
         type: 3}
       propertyPath: spawnTime
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -5065791069272090490, guid: 9f7cd52d1d2179c44b94f96fdea36b09,
         type: 3}

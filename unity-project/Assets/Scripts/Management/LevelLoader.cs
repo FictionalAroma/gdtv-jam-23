@@ -1,4 +1,5 @@
 using System;
+using CommonComponents.Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Environment;
@@ -8,18 +9,19 @@ namespace Management
 {
     public class LevelLoader
     {
-        public int _currentSceneIndex;
-        public string _currentActiveScene;
+        public static int _currentSceneIndex;
+        public static string _currentActiveScene;
         public static string hackingScene;
         GameStateManager gameStateManager;
 		private static HackingConsole consoleCache;
-        private void OnLevelStart()
+		private void OnLevelStart()
         {
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         }
 
         public static void LoadHacking(HackingConsole console)
 		{
+			_currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 			consoleCache = console;
 			hackingScene = $"Hacking {console.hackingSceneDifficulty}";
 			GameStateManager.Instance.SetState(CommonComponents.Interfaces.GameState.Hacking);
@@ -36,6 +38,10 @@ namespace Management
 			{
 				SingletonRepo.PlayerObject.CurrentHP -= 10;
 			}
+
+			SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(_currentSceneIndex));
+			SceneManager.UnloadSceneAsync($"Hacking {consoleCache.hackingSceneDifficulty}");
+            GameStateManager.Instance.SetState(GameState.Running);
 		}
        
         internal static void ExitGame()
@@ -48,10 +54,11 @@ namespace Management
         }
 
         public static void GoToGameLevel()
-		{
-            SceneManager.LoadScene(1, new LoadSceneParameters(LoadSceneMode.Single, LocalPhysicsMode.Physics3D));
-        }
-        public void LoadNextScene()
+        {
+            SceneManager.LoadScene(1);
+			SceneManager.UnloadSceneAsync(0);
+		}
+        public static void LoadNextScene()
         {
 
             _currentActiveScene = SceneManager.GetActiveScene().name;
@@ -67,8 +74,11 @@ namespace Management
             {
                 SceneManager.LoadScene("MainMenu");
             }
-            
-        }
+
+			SceneManager.UnloadSceneAsync(_currentActiveScene);
+			_currentActiveScene = SceneManager.GetActiveScene().name;
+
+		}
         public void RestartScene()
         {
             _currentActiveScene = SceneManager.GetActiveScene().name;

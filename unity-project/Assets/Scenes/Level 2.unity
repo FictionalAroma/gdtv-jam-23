@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5386,25 +5386,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 686575734}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &704201981 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1819004262414916127, guid: 8daa129ccb70a73478fb47ab4d8984ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 1819004261542269772}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &704201984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704201981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b28b5dc527db34646b989651f0b540fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finalDoor: {fileID: 1536112746}
 --- !u!4 &711854407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5089417156437766040, guid: b138b6b2715d26045b0149c959d69f3f,
@@ -5558,6 +5539,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2621708627619808612, guid: 4282b8abc53fc6c43a54de5f566fcb79,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1026691797643404086}
     - target: {fileID: 2621708627619808612, guid: 4282b8abc53fc6c43a54de5f566fcb79,
         type: 3}
       propertyPath: moveSpeed
@@ -16710,6 +16696,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b54098ee2874bf47b975ab2bc3606e1, type: 3}
+--- !u!20 &1026691797643404086 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1026691798094151984, guid: 5b54098ee2874bf47b975ab2bc3606e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1026691797643404085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1819004261542269772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16717,6 +16709,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1102596817, guid: 8daa129ccb70a73478fb47ab4d8984ee, type: 3}
+      propertyPath: finalDoor
+      value: 
+      objectReference: {fileID: 1536112746}
     - target: {fileID: 1819004262414916121, guid: 8daa129ccb70a73478fb47ab4d8984ee,
         type: 3}
       propertyPath: m_RootOrder
